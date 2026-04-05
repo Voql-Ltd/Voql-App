@@ -1,0 +1,2342 @@
+[
+  {
+    "cca2": "DZ",
+    "currency": ["DZD"],
+    "callingCode": ["213"],
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "flag": "🇩🇿",
+    "name": {
+      "common": "Algeria",
+      "official": "People's Democratic Republic of Algeria"
+    }
+  },
+  {
+    "cca2": "AO",
+    "currency": ["AOA"],
+    "callingCode": ["244"],
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "flag": "🇦🇴",
+    "name": {
+      "common": "Angola",
+      "official": "Republic of Angola"
+    }
+  },
+  {
+    "cca2": "BW",
+    "currency": ["BWP"],
+    "callingCode": ["267"],
+    "region": "Africa",
+    "subregion": "Southern Africa",
+    "flag": "🇧🇼",
+    "name": {
+      "common": "Botswana",
+      "official": "Republic of Botswana"
+    }
+  },
+  {
+    "cca2": "BF",
+    "currency": ["XOF"],
+    "callingCode": ["226"],
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "flag": "🇧🇫",
+    "name": {
+      "common": "Burkina Faso",
+      "official": "Burkina Faso"
+    }
+  },
+  {
+    "cca2": "BI",
+    "currency": ["BIF"],
+    "callingCode": ["257"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇧🇮",
+    "name": {
+      "common": "Burundi",
+      "official": "Republic of Burundi"
+    }
+  },
+  {
+    "cca2": "CM",
+    "currency": ["XAF"],
+    "callingCode": ["237"],
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "flag": "🇨🇲",
+    "name": {
+      "common": "Cameroon",
+      "official": "Republic of Cameroon"
+    }
+  },
+  {
+    "cca2": "CV",
+    "currency": ["CVE"],
+    "callingCode": ["238"],
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "flag": "🇨🇻",
+    "name": {
+      "common": "Cape Verde",
+      "official": "Republic of Cabo Verde"
+    }
+  },
+  {
+    "cca2": "CF",
+    "currency": ["XAF"],
+    "callingCode": ["236"],
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "flag": "🇨🇫",
+    "name": {
+      "common": "Central African Republic",
+      "official": "Central African Republic"
+    }
+  },
+  {
+    "cca2": "TD",
+    "currency": ["XAF"],
+    "callingCode": ["235"],
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "flag": "🇹🇩",
+    "name": {
+      "common": "Chad",
+      "official": "Republic of Chad"
+    }
+  },
+  {
+    "cca2": "KM",
+    "currency": ["KMF"],
+    "callingCode": ["269"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇰🇲",
+    "name": {
+      "common": "Comoros",
+      "official": "Union of the Comoros"
+    }
+  },
+  {
+    "cca2": "CG",
+    "currency": ["XAF"],
+    "callingCode": ["242"],
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "flag": "🇨🇬",
+    "name": {
+      "common": "Republic of the Congo",
+      "official": "Republic of the Congo"
+    }
+  },
+  {
+    "cca2": "CD",
+    "currency": ["CDF"],
+    "callingCode": ["243"],
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "flag": "🇨🇩",
+    "name": {
+      "common": "DR Congo",
+      "official": "Democratic Republic of the Congo"
+    }
+  },
+  {
+    "cca2": "CI",
+    "currency": ["XOF"],
+    "callingCode": ["225"],
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "flag": "🇨🇮",
+    "name": {
+      "common": "Côte d'Ivoire",
+      "official": "Republic of Côte d'Ivoire"
+    }
+  },
+  {
+    "cca2": "DJ",
+    "currency": ["DJF"],
+    "callingCode": ["253"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇩🇯",
+    "name": {
+      "common": "Djibouti",
+      "official": "Republic of Djibouti"
+    }
+  },
+  {
+    "cca2": "EG",
+    "currency": ["EGP"],
+    "callingCode": ["20"],
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "flag": "🇪🇬",
+    "name": {
+      "common": "Egypt",
+      "official": "Arab Republic of Egypt"
+    }
+  },
+  {
+    "cca2": "GQ",
+    "currency": ["XAF"],
+    "callingCode": ["240"],
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "flag": "🇬🇶",
+    "name": {
+      "common": "Equatorial Guinea",
+      "official": "Republic of Equatorial Guinea"
+    }
+  },
+  {
+    "cca2": "ER",
+    "currency": ["ERN"],
+    "callingCode": ["291"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇪🇷",
+    "name": {
+      "common": "Eritrea",
+      "official": "State of Eritrea"
+    }
+  },
+  {
+    "cca2": "SZ",
+    "currency": ["SZL"],
+    "callingCode": ["268"],
+    "region": "Africa",
+    "subregion": "Southern Africa",
+    "flag": "🇸🇿",
+    "name": {
+      "common": "Eswatini",
+      "official": "Kingdom of Eswatini"
+    }
+  },
+  {
+    "cca2": "ET",
+    "currency": ["ETB"],
+    "callingCode": ["251"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇪🇹",
+    "name": {
+      "common": "Ethiopia",
+      "official": "Federal Democratic Republic of Ethiopia"
+    }
+  },
+  {
+    "cca2": "GA",
+    "currency": ["XAF"],
+    "callingCode": ["241"],
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "flag": "🇬🇦",
+    "name": {
+      "common": "Gabon",
+      "official": "Gabonese Republic"
+    }
+  },
+  {
+    "cca2": "GM",
+    "currency": ["GMD"],
+    "callingCode": ["220"],
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "flag": "🇬🇲",
+    "name": {
+      "common": "Gambia",
+      "official": "Republic of the Gambia"
+    }
+  },
+  {
+    "cca2": "GH",
+    "currency": ["GHS"],
+    "callingCode": ["233"],
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "flag": "🇬🇭",
+    "name": {
+      "common": "Ghana",
+      "official": "Republic of Ghana"
+    }
+  },
+  {
+    "cca2": "GN",
+    "currency": ["GNF"],
+    "callingCode": ["224"],
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "flag": "🇬🇳",
+    "name": {
+      "common": "Guinea",
+      "official": "Republic of Guinea"
+    }
+  },
+  {
+    "cca2": "GW",
+    "currency": ["XOF"],
+    "callingCode": ["245"],
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "flag": "🇬🇼",
+    "name": {
+      "common": "Guinea-Bissau",
+      "official": "Republic of Guinea-Bissau"
+    }
+  },
+  {
+    "cca2": "KE",
+    "currency": ["KES"],
+    "callingCode": ["254"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇰🇪",
+    "name": {
+      "common": "Kenya",
+      "official": "Republic of Kenya"
+    }
+  },
+  {
+    "cca2": "LS",
+    "currency": ["LSL", "ZAR"],
+    "callingCode": ["266"],
+    "region": "Africa",
+    "subregion": "Southern Africa",
+    "flag": "🇱🇸",
+    "name": {
+      "common": "Lesotho",
+      "official": "Kingdom of Lesotho"
+    }
+  },
+  {
+    "cca2": "LR",
+    "currency": ["LRD"],
+    "callingCode": ["231"],
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "flag": "🇱🇷",
+    "name": {
+      "common": "Liberia",
+      "official": "Republic of Liberia"
+    }
+  },
+  {
+    "cca2": "LY",
+    "currency": ["LYD"],
+    "callingCode": ["218"],
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "flag": "🇱🇾",
+    "name": {
+      "common": "Libya",
+      "official": "State of Libya"
+    }
+  },
+  {
+    "cca2": "MG",
+    "currency": ["MGA"],
+    "callingCode": ["261"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇲🇬",
+    "name": {
+      "common": "Madagascar",
+      "official": "Republic of Madagascar"
+    }
+  },
+  {
+    "cca2": "MW",
+    "currency": ["MWK"],
+    "callingCode": ["265"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇲🇼",
+    "name": {
+      "common": "Malawi",
+      "official": "Republic of Malawi"
+    }
+  },
+  {
+    "cca2": "ML",
+    "currency": ["XOF"],
+    "callingCode": ["223"],
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "flag": "🇲🇱",
+    "name": {
+      "common": "Mali",
+      "official": "Republic of Mali"
+    }
+  },
+  {
+    "cca2": "MR",
+    "currency": ["MRU"],
+    "callingCode": ["222"],
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "flag": "🇲🇷",
+    "name": {
+      "common": "Mauritania",
+      "official": "Islamic Republic of Mauritania"
+    }
+  },
+  {
+    "cca2": "MU",
+    "currency": ["MUR"],
+    "callingCode": ["230"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇲🇺",
+    "name": {
+      "common": "Mauritius",
+      "official": "Republic of Mauritius"
+    }
+  },
+  {
+    "cca2": "MA",
+    "currency": ["MAD"],
+    "callingCode": ["212"],
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "flag": "🇲🇦",
+    "name": {
+      "common": "Morocco",
+      "official": "Kingdom of Morocco"
+    }
+  },
+  {
+    "cca2": "MZ",
+    "currency": ["MZN"],
+    "callingCode": ["258"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇲🇿",
+    "name": {
+      "common": "Mozambique",
+      "official": "Republic of Mozambique"
+    }
+  },
+  {
+    "cca2": "NA",
+    "currency": ["NAD", "ZAR"],
+    "callingCode": ["264"],
+    "region": "Africa",
+    "subregion": "Southern Africa",
+    "flag": "🇳🇦",
+    "name": {
+      "common": "Namibia",
+      "official": "Republic of Namibia"
+    }
+  },
+  {
+    "cca2": "NE",
+    "currency": ["XOF"],
+    "callingCode": ["227"],
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "flag": "🇳🇪",
+    "name": {
+      "common": "Niger",
+      "official": "Republic of the Niger"
+    }
+  },
+  {
+    "cca2": "NG",
+    "currency": ["NGN"],
+    "callingCode": ["234"],
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "flag": "🇳🇬",
+    "name": {
+      "common": "Nigeria",
+      "official": "Federal Republic of Nigeria"
+    }
+  },
+  {
+    "cca2": "RW",
+    "currency": ["RWF"],
+    "callingCode": ["250"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇷🇼",
+    "name": {
+      "common": "Rwanda",
+      "official": "Republic of Rwanda"
+    }
+  },
+  {
+    "cca2": "ST",
+    "currency": ["STN"],
+    "callingCode": ["239"],
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "flag": "🇸🇹",
+    "name": {
+      "common": "São Tomé and Príncipe",
+      "official": "Democratic Republic of São Tomé and Príncipe"
+    }
+  },
+  {
+    "cca2": "SN",
+    "currency": ["XOF"],
+    "callingCode": ["221"],
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "flag": "🇸🇳",
+    "name": {
+      "common": "Senegal",
+      "official": "Republic of Senegal"
+    }
+  },
+  {
+    "cca2": "SC",
+    "currency": ["SCR"],
+    "callingCode": ["248"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇸🇨",
+    "name": {
+      "common": "Seychelles",
+      "official": "Republic of Seychelles"
+    }
+  },
+  {
+    "cca2": "SL",
+    "currency": ["SLE"],
+    "callingCode": ["232"],
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "flag": "🇸🇱",
+    "name": {
+      "common": "Sierra Leone",
+      "official": "Republic of Sierra Leone"
+    }
+  },
+  {
+    "cca2": "SO",
+    "currency": ["SOS"],
+    "callingCode": ["252"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇸🇴",
+    "name": {
+      "common": "Somalia",
+      "official": "Federal Republic of Somalia"
+    }
+  },
+  {
+    "cca2": "ZA",
+    "currency": ["ZAR"],
+    "callingCode": ["27"],
+    "region": "Africa",
+    "subregion": "Southern Africa",
+    "flag": "🇿🇦",
+    "name": {
+      "common": "South Africa",
+      "official": "Republic of South Africa"
+    }
+  },
+  {
+    "cca2": "SS",
+    "currency": ["SSP"],
+    "callingCode": ["211"],
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "flag": "🇸🇸",
+    "name": {
+      "common": "South Sudan",
+      "official": "Republic of South Sudan"
+    }
+  },
+  {
+    "cca2": "SD",
+    "currency": ["SDG"],
+    "callingCode": ["249"],
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "flag": "🇸🇩",
+    "name": {
+      "common": "Sudan",
+      "official": "Republic of the Sudan"
+    }
+  },
+  {
+    "cca2": "TZ",
+    "currency": ["TZS"],
+    "callingCode": ["255"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇹🇿",
+    "name": {
+      "common": "Tanzania",
+      "official": "United Republic of Tanzania"
+    }
+  },
+  {
+    "cca2": "TG",
+    "currency": ["XOF"],
+    "callingCode": ["228"],
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "flag": "🇹🇬",
+    "name": {
+      "common": "Togo",
+      "official": "Togolese Republic"
+    }
+  },
+  {
+    "cca2": "TN",
+    "currency": ["TND"],
+    "callingCode": ["216"],
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "flag": "🇹🇳",
+    "name": {
+      "common": "Tunisia",
+      "official": "Republic of Tunisia"
+    }
+  },
+  {
+    "cca2": "UG",
+    "currency": ["UGX"],
+    "callingCode": ["256"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇺🇬",
+    "name": {
+      "common": "Uganda",
+      "official": "Republic of Uganda"
+    }
+  },
+  {
+    "cca2": "ZM",
+    "currency": ["ZMW"],
+    "callingCode": ["260"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇿🇲",
+    "name": {
+      "common": "Zambia",
+      "official": "Republic of Zambia"
+    }
+  },
+  {
+    "cca2": "ZW",
+    "currency": ["USD", "ZWL"],
+    "callingCode": ["263"],
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "flag": "🇿🇼",
+    "name": {
+      "common": "Zimbabwe",
+      "official": "Republic of Zimbabwe"
+    }
+  },
+  {
+    "cca2": "AG",
+    "currency": ["XCD"],
+    "callingCode": ["1"],
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "flag": "🇦🇬",
+    "name": {
+      "common": "Antigua and Barbuda",
+      "official": "Antigua and Barbuda"
+    }
+  },
+  {
+    "cca2": "AR",
+    "currency": ["ARS"],
+    "callingCode": ["54"],
+    "region": "Americas",
+    "subregion": "South America",
+    "flag": "🇦🇷",
+    "name": {
+      "common": "Argentina",
+      "official": "Argentine Republic"
+    }
+  },
+  {
+    "cca2": "BS",
+    "currency": ["BSD"],
+    "callingCode": ["1"],
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "flag": "🇧🇸",
+    "name": {
+      "common": "Bahamas",
+      "official": "Commonwealth of the Bahamas"
+    }
+  },
+  {
+    "cca2": "BB",
+    "currency": ["BBD"],
+    "callingCode": ["1"],
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "flag": "🇧🇧",
+    "name": {
+      "common": "Barbados",
+      "official": "Barbados"
+    }
+  },
+  {
+    "cca2": "BZ",
+    "currency": ["BZD"],
+    "callingCode": ["501"],
+    "region": "Americas",
+    "subregion": "Central America",
+    "flag": "🇧🇿",
+    "name": {
+      "common": "Belize",
+      "official": "Belize"
+    }
+  },
+  {
+    "cca2": "BO",
+    "currency": ["BOB"],
+    "callingCode": ["591"],
+    "region": "Americas",
+    "subregion": "South America",
+    "flag": "🇧🇴",
+    "name": {
+      "common": "Bolivia",
+      "official": "Plurinational State of Bolivia"
+    }
+  },
+  {
+    "cca2": "BR",
+    "currency": ["BRL"],
+    "callingCode": ["55"],
+    "region": "Americas",
+    "subregion": "South America",
+    "flag": "🇧🇷",
+    "name": {
+      "common": "Brazil",
+      "official": "Federative Republic of Brazil"
+    }
+  },
+  {
+    "cca2": "CA",
+    "currency": ["CAD"],
+    "callingCode": ["1"],
+    "region": "Americas",
+    "subregion": "North America",
+    "flag": "🇨🇦",
+    "name": {
+      "common": "Canada",
+      "official": "Canada"
+    }
+  },
+  {
+    "cca2": "CL",
+    "currency": ["CLP"],
+    "callingCode": ["56"],
+    "region": "Americas",
+    "subregion": "South America",
+    "flag": "🇨🇱",
+    "name": {
+      "common": "Chile",
+      "official": "Republic of Chile"
+    }
+  },
+  {
+    "cca2": "CO",
+    "currency": ["COP"],
+    "callingCode": ["57"],
+    "region": "Americas",
+    "subregion": "South America",
+    "flag": "🇨🇴",
+    "name": {
+      "common": "Colombia",
+      "official": "Republic of Colombia"
+    }
+  },
+  {
+    "cca2": "CR",
+    "currency": ["CRC"],
+    "callingCode": ["506"],
+    "region": "Americas",
+    "subregion": "Central America",
+    "flag": "🇨🇷",
+    "name": {
+      "common": "Costa Rica",
+      "official": "Republic of Costa Rica"
+    }
+  },
+  {
+    "cca2": "CU",
+    "currency": ["CUP"],
+    "callingCode": ["53"],
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "flag": "🇨🇺",
+    "name": {
+      "common": "Cuba",
+      "official": "Republic of Cuba"
+    }
+  },
+  {
+    "cca2": "DM",
+    "currency": ["XCD"],
+    "callingCode": ["1"],
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "flag": "🇩🇲",
+    "name": {
+      "common": "Dominica",
+      "official": "Commonwealth of Dominica"
+    }
+  },
+  {
+    "cca2": "DO",
+    "currency": ["DOP"],
+    "callingCode": ["1"],
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "flag": "🇩🇴",
+    "name": {
+      "common": "Dominican Republic",
+      "official": "Dominican Republic"
+    }
+  },
+  {
+    "cca2": "EC",
+    "currency": ["USD"],
+    "callingCode": ["593"],
+    "region": "Americas",
+    "subregion": "South America",
+    "flag": "🇪🇨",
+    "name": {
+      "common": "Ecuador",
+      "official": "Republic of Ecuador"
+    }
+  },
+  {
+    "cca2": "SV",
+    "currency": ["USD"],
+    "callingCode": ["503"],
+    "region": "Americas",
+    "subregion": "Central America",
+    "flag": "🇸🇻",
+    "name": {
+      "common": "El Salvador",
+      "official": "Republic of El Salvador"
+    }
+  },
+  {
+    "cca2": "GD",
+    "currency": ["XCD"],
+    "callingCode": ["1"],
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "flag": "🇬🇩",
+    "name": {
+      "common": "Grenada",
+      "official": "Grenada"
+    }
+  },
+  {
+    "cca2": "GT",
+    "currency": ["GTQ"],
+    "callingCode": ["502"],
+    "region": "Americas",
+    "subregion": "Central America",
+    "flag": "🇬🇹",
+    "name": {
+      "common": "Guatemala",
+      "official": "Republic of Guatemala"
+    }
+  },
+  {
+    "cca2": "GY",
+    "currency": ["GYD"],
+    "callingCode": ["592"],
+    "region": "Americas",
+    "subregion": "South America",
+    "flag": "🇬🇾",
+    "name": {
+      "common": "Guyana",
+      "official": "Co-operative Republic of Guyana"
+    }
+  },
+  {
+    "cca2": "HT",
+    "currency": ["HTG", "USD"],
+    "callingCode": ["509"],
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "flag": "🇭🇹",
+    "name": {
+      "common": "Haiti",
+      "official": "Republic of Haiti"
+    }
+  },
+  {
+    "cca2": "HN",
+    "currency": ["HNL"],
+    "callingCode": ["504"],
+    "region": "Americas",
+    "subregion": "Central America",
+    "flag": "🇭🇳",
+    "name": {
+      "common": "Honduras",
+      "official": "Republic of Honduras"
+    }
+  },
+  {
+    "cca2": "JM",
+    "currency": ["JMD"],
+    "callingCode": ["1"],
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "flag": "🇯🇲",
+    "name": {
+      "common": "Jamaica",
+      "official": "Jamaica"
+    }
+  },
+  {
+    "cca2": "MX",
+    "currency": ["MXN"],
+    "callingCode": ["52"],
+    "region": "Americas",
+    "subregion": "North America",
+    "flag": "🇲🇽",
+    "name": {
+      "common": "Mexico",
+      "official": "United Mexican States"
+    }
+  },
+  {
+    "cca2": "NI",
+    "currency": ["NIO"],
+    "callingCode": ["505"],
+    "region": "Americas",
+    "subregion": "Central America",
+    "flag": "🇳🇮",
+    "name": {
+      "common": "Nicaragua",
+      "official": "Republic of Nicaragua"
+    }
+  },
+  {
+    "cca2": "PA",
+    "currency": ["PAB", "USD"],
+    "callingCode": ["507"],
+    "region": "Americas",
+    "subregion": "Central America",
+    "flag": "🇵🇦",
+    "name": {
+      "common": "Panama",
+      "official": "Republic of Panama"
+    }
+  },
+  {
+    "cca2": "PY",
+    "currency": ["PYG"],
+    "callingCode": ["595"],
+    "region": "Americas",
+    "subregion": "South America",
+    "flag": "🇵🇾",
+    "name": {
+      "common": "Paraguay",
+      "official": "Republic of Paraguay"
+    }
+  },
+  {
+    "cca2": "PE",
+    "currency": ["PEN"],
+    "callingCode": ["51"],
+    "region": "Americas",
+    "subregion": "South America",
+    "flag": "🇵🇪",
+    "name": {
+      "common": "Peru",
+      "official": "Republic of Peru"
+    }
+  },
+  {
+    "cca2": "KN",
+    "currency": ["XCD"],
+    "callingCode": ["1"],
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "flag": "🇰🇳",
+    "name": {
+      "common": "Saint Kitts and Nevis",
+      "official": "Federation of Saint Christopher and Nevis"
+    }
+  },
+  {
+    "cca2": "LC",
+    "currency": ["XCD"],
+    "callingCode": ["1"],
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "flag": "🇱🇨",
+    "name": {
+      "common": "Saint Lucia",
+      "official": "Saint Lucia"
+    }
+  },
+  {
+    "cca2": "VC",
+    "currency": ["XCD"],
+    "callingCode": ["1"],
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "flag": "🇻🇨",
+    "name": {
+      "common": "Saint Vincent and the Grenadines",
+      "official": "Saint Vincent and the Grenadines"
+    }
+  },
+  {
+    "cca2": "SR",
+    "currency": ["SRD"],
+    "callingCode": ["597"],
+    "region": "Americas",
+    "subregion": "South America",
+    "flag": "🇸🇷",
+    "name": {
+      "common": "Suriname",
+      "official": "Republic of Suriname"
+    }
+  },
+  {
+    "cca2": "TT",
+    "currency": ["TTD"],
+    "callingCode": ["1"],
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "flag": "🇹🇹",
+    "name": {
+      "common": "Trinidad and Tobago",
+      "official": "Republic of Trinidad and Tobago"
+    }
+  },
+  {
+    "cca2": "US",
+    "currency": ["USD"],
+    "callingCode": ["1"],
+    "region": "Americas",
+    "subregion": "North America",
+    "flag": "🇺🇸",
+    "name": {
+      "common": "United States",
+      "official": "United States of America"
+    }
+  },
+  {
+    "cca2": "UY",
+    "currency": ["UYU"],
+    "callingCode": ["598"],
+    "region": "Americas",
+    "subregion": "South America",
+    "flag": "🇺🇾",
+    "name": {
+      "common": "Uruguay",
+      "official": "Oriental Republic of Uruguay"
+    }
+  },
+  {
+    "cca2": "VE",
+    "currency": ["VES"],
+    "callingCode": ["58"],
+    "region": "Americas",
+    "subregion": "South America",
+    "flag": "🇻🇪",
+    "name": {
+      "common": "Venezuela",
+      "official": "Bolivarian Republic of Venezuela"
+    }
+  },
+  {
+    "cca2": "AF",
+    "currency": ["AFN"],
+    "callingCode": ["93"],
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "flag": "🇦🇫",
+    "name": {
+      "common": "Afghanistan",
+      "official": "Islamic Emirate of Afghanistan"
+    }
+  },
+  {
+    "cca2": "AM",
+    "currency": ["AMD"],
+    "callingCode": ["374"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇦🇲",
+    "name": {
+      "common": "Armenia",
+      "official": "Republic of Armenia"
+    }
+  },
+  {
+    "cca2": "AZ",
+    "currency": ["AZN"],
+    "callingCode": ["994"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇦🇿",
+    "name": {
+      "common": "Azerbaijan",
+      "official": "Republic of Azerbaijan"
+    }
+  },
+  {
+    "cca2": "BH",
+    "currency": ["BHD"],
+    "callingCode": ["973"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇧🇭",
+    "name": {
+      "common": "Bahrain",
+      "official": "Kingdom of Bahrain"
+    }
+  },
+  {
+    "cca2": "BD",
+    "currency": ["BDT"],
+    "callingCode": ["880"],
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "flag": "🇧🇩",
+    "name": {
+      "common": "Bangladesh",
+      "official": "People's Republic of Bangladesh"
+    }
+  },
+  {
+    "cca2": "BT",
+    "currency": ["BTN", "INR"],
+    "callingCode": ["975"],
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "flag": "🇧🇹",
+    "name": {
+      "common": "Bhutan",
+      "official": "Kingdom of Bhutan"
+    }
+  },
+  {
+    "cca2": "BN",
+    "currency": ["BND"],
+    "callingCode": ["673"],
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "flag": "🇧🇳",
+    "name": {
+      "common": "Brunei",
+      "official": "Nation of Brunei, Abode of Peace"
+    }
+  },
+  {
+    "cca2": "KH",
+    "currency": ["KHR"],
+    "callingCode": ["855"],
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "flag": "🇰🇭",
+    "name": {
+      "common": "Cambodia",
+      "official": "Kingdom of Cambodia"
+    }
+  },
+  {
+    "cca2": "CN",
+    "currency": ["CNY"],
+    "callingCode": ["86"],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "flag": "🇨🇳",
+    "name": {
+      "common": "China",
+      "official": "People's Republic of China"
+    }
+  },
+  {
+    "cca2": "CY",
+    "currency": ["EUR"],
+    "callingCode": ["357"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇨🇾",
+    "name": {
+      "common": "Cyprus",
+      "official": "Republic of Cyprus"
+    }
+  },
+  {
+    "cca2": "GE",
+    "currency": ["GEL"],
+    "callingCode": ["995"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇬🇪",
+    "name": {
+      "common": "Georgia",
+      "official": "Georgia"
+    }
+  },
+  {
+    "cca2": "IN",
+    "currency": ["INR"],
+    "callingCode": ["91"],
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "flag": "🇮🇳",
+    "name": {
+      "common": "India",
+      "official": "Republic of India"
+    }
+  },
+  {
+    "cca2": "ID",
+    "currency": ["IDR"],
+    "callingCode": ["62"],
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "flag": "🇮🇩",
+    "name": {
+      "common": "Indonesia",
+      "official": "Republic of Indonesia"
+    }
+  },
+  {
+    "cca2": "IR",
+    "currency": ["IRR"],
+    "callingCode": ["98"],
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "flag": "🇮🇷",
+    "name": {
+      "common": "Iran",
+      "official": "Islamic Republic of Iran"
+    }
+  },
+  {
+    "cca2": "IQ",
+    "currency": ["IQD"],
+    "callingCode": ["964"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇮🇶",
+    "name": {
+      "common": "Iraq",
+      "official": "Republic of Iraq"
+    }
+  },
+  {
+    "cca2": "IL",
+    "currency": ["ILS"],
+    "callingCode": ["972"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇮🇱",
+    "name": {
+      "common": "Israel",
+      "official": "State of Israel"
+    }
+  },
+  {
+    "cca2": "JP",
+    "currency": ["JPY"],
+    "callingCode": ["81"],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "flag": "🇯🇵",
+    "name": {
+      "common": "Japan",
+      "official": "Japan"
+    }
+  },
+  {
+    "cca2": "JO",
+    "currency": ["JOD"],
+    "callingCode": ["962"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇯🇴",
+    "name": {
+      "common": "Jordan",
+      "official": "Hashemite Kingdom of Jordan"
+    }
+  },
+  {
+    "cca2": "KZ",
+    "currency": ["KZT"],
+    "callingCode": ["7"],
+    "region": "Asia",
+    "subregion": "Central Asia",
+    "flag": "🇰🇿",
+    "name": {
+      "common": "Kazakhstan",
+      "official": "Republic of Kazakhstan"
+    }
+  },
+  {
+    "cca2": "KW",
+    "currency": ["KWD"],
+    "callingCode": ["965"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇰🇼",
+    "name": {
+      "common": "Kuwait",
+      "official": "State of Kuwait"
+    }
+  },
+  {
+    "cca2": "KG",
+    "currency": ["KGS"],
+    "callingCode": ["996"],
+    "region": "Asia",
+    "subregion": "Central Asia",
+    "flag": "🇰🇬",
+    "name": {
+      "common": "Kyrgyzstan",
+      "official": "Kyrgyz Republic"
+    }
+  },
+  {
+    "cca2": "LA",
+    "currency": ["LAK"],
+    "callingCode": ["856"],
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "flag": "🇱🇦",
+    "name": {
+      "common": "Laos",
+      "official": "Lao People's Democratic Republic"
+    }
+  },
+  {
+    "cca2": "LB",
+    "currency": ["LBP"],
+    "callingCode": ["961"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇱🇧",
+    "name": {
+      "common": "Lebanon",
+      "official": "Lebanese Republic"
+    }
+  },
+  {
+    "cca2": "MY",
+    "currency": ["MYR"],
+    "callingCode": ["60"],
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "flag": "🇲🇾",
+    "name": {
+      "common": "Malaysia",
+      "official": "Malaysia"
+    }
+  },
+  {
+    "cca2": "MV",
+    "currency": ["MVR"],
+    "callingCode": ["960"],
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "flag": "🇲🇻",
+    "name": {
+      "common": "Maldives",
+      "official": "Republic of Maldives"
+    }
+  },
+  {
+    "cca2": "MN",
+    "currency": ["MNT"],
+    "callingCode": ["976"],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "flag": "🇲🇳",
+    "name": {
+      "common": "Mongolia",
+      "official": "Mongolia"
+    }
+  },
+  {
+    "cca2": "MM",
+    "currency": ["MMK"],
+    "callingCode": ["95"],
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "flag": "🇲🇲",
+    "name": {
+      "common": "Myanmar",
+      "official": "Republic of the Union of Myanmar"
+    }
+  },
+  {
+    "cca2": "NP",
+    "currency": ["NPR"],
+    "callingCode": ["977"],
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "flag": "🇳🇵",
+    "name": {
+      "common": "Nepal",
+      "official": "Federal Democratic Republic of Nepal"
+    }
+  },
+  {
+    "cca2": "KP",
+    "currency": ["KPW"],
+    "callingCode": ["850"],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "flag": "🇰🇵",
+    "name": {
+      "common": "North Korea",
+      "official": "Democratic People's Republic of Korea"
+    }
+  },
+  {
+    "cca2": "OM",
+    "currency": ["OMR"],
+    "callingCode": ["968"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇴🇲",
+    "name": {
+      "common": "Oman",
+      "official": "Sultanate of Oman"
+    }
+  },
+  {
+    "cca2": "PK",
+    "currency": ["PKR"],
+    "callingCode": ["92"],
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "flag": "🇵🇰",
+    "name": {
+      "common": "Pakistan",
+      "official": "Islamic Republic of Pakistan"
+    }
+  },
+  {
+    "cca2": "PH",
+    "currency": ["PHP"],
+    "callingCode": ["63"],
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "flag": "🇵🇭",
+    "name": {
+      "common": "Philippines",
+      "official": "Republic of the Philippines"
+    }
+  },
+  {
+    "cca2": "QA",
+    "currency": ["QAR"],
+    "callingCode": ["974"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇶🇦",
+    "name": {
+      "common": "Qatar",
+      "official": "State of Qatar"
+    }
+  },
+  {
+    "cca2": "SA",
+    "currency": ["SAR"],
+    "callingCode": ["966"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇸🇦",
+    "name": {
+      "common": "Saudi Arabia",
+      "official": "Kingdom of Saudi Arabia"
+    }
+  },
+  {
+    "cca2": "SG",
+    "currency": ["SGD"],
+    "callingCode": ["65"],
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "flag": "🇸🇬",
+    "name": {
+      "common": "Singapore",
+      "official": "Republic of Singapore"
+    }
+  },
+  {
+    "cca2": "KR",
+    "currency": ["KRW"],
+    "callingCode": ["82"],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "flag": "🇰🇷",
+    "name": {
+      "common": "South Korea",
+      "official": "Republic of Korea"
+    }
+  },
+  {
+    "cca2": "LK",
+    "currency": ["LKR"],
+    "callingCode": ["94"],
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "flag": "🇱🇰",
+    "name": {
+      "common": "Sri Lanka",
+      "official": "Democratic Socialist Republic of Sri Lanka"
+    }
+  },
+  {
+    "cca2": "SY",
+    "currency": ["SYP"],
+    "callingCode": ["963"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇸🇾",
+    "name": {
+      "common": "Syria",
+      "official": "Syrian Arab Republic"
+    }
+  },
+  {
+    "cca2": "TW",
+    "currency": ["TWD"],
+    "callingCode": ["886"],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "flag": "🇹🇼",
+    "name": {
+      "common": "Taiwan",
+      "official": "Republic of China (Taiwan)"
+    }
+  },
+  {
+    "cca2": "TJ",
+    "currency": ["TJS"],
+    "callingCode": ["992"],
+    "region": "Asia",
+    "subregion": "Central Asia",
+    "flag": "🇹🇯",
+    "name": {
+      "common": "Tajikistan",
+      "official": "Republic of Tajikistan"
+    }
+  },
+  {
+    "cca2": "TH",
+    "currency": ["THB"],
+    "callingCode": ["66"],
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "flag": "🇹🇭",
+    "name": {
+      "common": "Thailand",
+      "official": "Kingdom of Thailand"
+    }
+  },
+  {
+    "cca2": "TL",
+    "currency": ["USD"],
+    "callingCode": ["670"],
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "flag": "🇹🇱",
+    "name": {
+      "common": "Timor-Leste",
+      "official": "Democratic Republic of Timor-Leste"
+    }
+  },
+  {
+    "cca2": "TR",
+    "currency": ["TRY"],
+    "callingCode": ["90"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇹🇷",
+    "name": {
+      "common": "Turkey",
+      "official": "Republic of Turkey"
+    }
+  },
+  {
+    "cca2": "TM",
+    "currency": ["TMT"],
+    "callingCode": ["993"],
+    "region": "Asia",
+    "subregion": "Central Asia",
+    "flag": "🇹🇲",
+    "name": {
+      "common": "Turkmenistan",
+      "official": "Turkmenistan"
+    }
+  },
+  {
+    "cca2": "AE",
+    "currency": ["AED"],
+    "callingCode": ["971"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇦🇪",
+    "name": {
+      "common": "United Arab Emirates",
+      "official": "United Arab Emirates"
+    }
+  },
+  {
+    "cca2": "UZ",
+    "currency": ["UZS"],
+    "callingCode": ["998"],
+    "region": "Asia",
+    "subregion": "Central Asia",
+    "flag": "🇺🇿",
+    "name": {
+      "common": "Uzbekistan",
+      "official": "Republic of Uzbekistan"
+    }
+  },
+  {
+    "cca2": "VN",
+    "currency": ["VND"],
+    "callingCode": ["84"],
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "flag": "🇻🇳",
+    "name": {
+      "common": "Vietnam",
+      "official": "Socialist Republic of Vietnam"
+    }
+  },
+  {
+    "cca2": "YE",
+    "currency": ["YER"],
+    "callingCode": ["967"],
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "flag": "🇾🇪",
+    "name": {
+      "common": "Yemen",
+      "official": "Republic of Yemen"
+    }
+  },
+  {
+    "cca2": "AL",
+    "currency": ["ALL"],
+    "callingCode": ["355"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇦🇱",
+    "name": {
+      "common": "Albania",
+      "official": "Republic of Albania"
+    }
+  },
+  {
+    "cca2": "AD",
+    "currency": ["EUR"],
+    "callingCode": ["376"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇦🇩",
+    "name": {
+      "common": "Andorra",
+      "official": "Principality of Andorra"
+    }
+  },
+  {
+    "cca2": "AT",
+    "currency": ["EUR"],
+    "callingCode": ["43"],
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "flag": "🇦🇹",
+    "name": {
+      "common": "Austria",
+      "official": "Republic of Austria"
+    }
+  },
+  {
+    "cca2": "BY",
+    "currency": ["BYN"],
+    "callingCode": ["375"],
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "flag": "🇧🇾",
+    "name": {
+      "common": "Belarus",
+      "official": "Republic of Belarus"
+    }
+  },
+  {
+    "cca2": "BE",
+    "currency": ["EUR"],
+    "callingCode": ["32"],
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "flag": "🇧🇪",
+    "name": {
+      "common": "Belgium",
+      "official": "Kingdom of Belgium"
+    }
+  },
+  {
+    "cca2": "BA",
+    "currency": ["BAM"],
+    "callingCode": ["387"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇧🇦",
+    "name": {
+      "common": "Bosnia and Herzegovina",
+      "official": "Bosnia and Herzegovina"
+    }
+  },
+  {
+    "cca2": "BG",
+    "currency": ["BGN"],
+    "callingCode": ["359"],
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "flag": "🇧🇬",
+    "name": {
+      "common": "Bulgaria",
+      "official": "Republic of Bulgaria"
+    }
+  },
+  {
+    "cca2": "HR",
+    "currency": ["EUR"],
+    "callingCode": ["385"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇭🇷",
+    "name": {
+      "common": "Croatia",
+      "official": "Republic of Croatia"
+    }
+  },
+  {
+    "cca2": "CZ",
+    "currency": ["CZK"],
+    "callingCode": ["420"],
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "flag": "🇨🇿",
+    "name": {
+      "common": "Czech Republic",
+      "official": "Czech Republic"
+    }
+  },
+  {
+    "cca2": "DK",
+    "currency": ["DKK"],
+    "callingCode": ["45"],
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "flag": "🇩🇰",
+    "name": {
+      "common": "Denmark",
+      "official": "Kingdom of Denmark"
+    }
+  },
+  {
+    "cca2": "EE",
+    "currency": ["EUR"],
+    "callingCode": ["372"],
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "flag": "🇪🇪",
+    "name": {
+      "common": "Estonia",
+      "official": "Republic of Estonia"
+    }
+  },
+  {
+    "cca2": "FI",
+    "currency": ["EUR"],
+    "callingCode": ["358"],
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "flag": "🇫🇮",
+    "name": {
+      "common": "Finland",
+      "official": "Republic of Finland"
+    }
+  },
+  {
+    "cca2": "FR",
+    "currency": ["EUR"],
+    "callingCode": ["33"],
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "flag": "🇫🇷",
+    "name": {
+      "common": "France",
+      "official": "French Republic"
+    }
+  },
+  {
+    "cca2": "DE",
+    "currency": ["EUR"],
+    "callingCode": ["49"],
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "flag": "🇩🇪",
+    "name": {
+      "common": "Germany",
+      "official": "Federal Republic of Germany"
+    }
+  },
+  {
+    "cca2": "GR",
+    "currency": ["EUR"],
+    "callingCode": ["30"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇬🇷",
+    "name": {
+      "common": "Greece",
+      "official": "Hellenic Republic"
+    }
+  },
+  {
+    "cca2": "HU",
+    "currency": ["HUF"],
+    "callingCode": ["36"],
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "flag": "🇭🇺",
+    "name": {
+      "common": "Hungary",
+      "official": "Hungary"
+    }
+  },
+  {
+    "cca2": "IS",
+    "currency": ["ISK"],
+    "callingCode": ["354"],
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "flag": "🇮🇸",
+    "name": {
+      "common": "Iceland",
+      "official": "Iceland"
+    }
+  },
+  {
+    "cca2": "IE",
+    "currency": ["EUR"],
+    "callingCode": ["353"],
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "flag": "🇮🇪",
+    "name": {
+      "common": "Ireland",
+      "official": "Republic of Ireland"
+    }
+  },
+  {
+    "cca2": "IT",
+    "currency": ["EUR"],
+    "callingCode": ["39"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇮🇹",
+    "name": {
+      "common": "Italy",
+      "official": "Italian Republic"
+    }
+  },
+  {
+    "cca2": "XK",
+    "currency": ["EUR"],
+    "callingCode": ["383"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇽🇰",
+    "name": {
+      "common": "Kosovo",
+      "official": "Republic of Kosovo"
+    }
+  },
+  {
+    "cca2": "LV",
+    "currency": ["EUR"],
+    "callingCode": ["371"],
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "flag": "🇱🇻",
+    "name": {
+      "common": "Latvia",
+      "official": "Republic of Latvia"
+    }
+  },
+  {
+    "cca2": "LI",
+    "currency": ["CHF"],
+    "callingCode": ["423"],
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "flag": "🇱🇮",
+    "name": {
+      "common": "Liechtenstein",
+      "official": "Principality of Liechtenstein"
+    }
+  },
+  {
+    "cca2": "LT",
+    "currency": ["EUR"],
+    "callingCode": ["370"],
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "flag": "🇱🇹",
+    "name": {
+      "common": "Lithuania",
+      "official": "Republic of Lithuania"
+    }
+  },
+  {
+    "cca2": "LU",
+    "currency": ["EUR"],
+    "callingCode": ["352"],
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "flag": "🇱🇺",
+    "name": {
+      "common": "Luxembourg",
+      "official": "Grand Duchy of Luxembourg"
+    }
+  },
+  {
+    "cca2": "MT",
+    "currency": ["EUR"],
+    "callingCode": ["356"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇲🇹",
+    "name": {
+      "common": "Malta",
+      "official": "Republic of Malta"
+    }
+  },
+  {
+    "cca2": "MD",
+    "currency": ["MDL"],
+    "callingCode": ["373"],
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "flag": "🇲🇩",
+    "name": {
+      "common": "Moldova",
+      "official": "Republic of Moldova"
+    }
+  },
+  {
+    "cca2": "MC",
+    "currency": ["EUR"],
+    "callingCode": ["377"],
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "flag": "🇲🇨",
+    "name": {
+      "common": "Monaco",
+      "official": "Principality of Monaco"
+    }
+  },
+  {
+    "cca2": "ME",
+    "currency": ["EUR"],
+    "callingCode": ["382"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇲🇪",
+    "name": {
+      "common": "Montenegro",
+      "official": "Montenegro"
+    }
+  },
+  {
+    "cca2": "NL",
+    "currency": ["EUR"],
+    "callingCode": ["31"],
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "flag": "🇳🇱",
+    "name": {
+      "common": "Netherlands",
+      "official": "Kingdom of the Netherlands"
+    }
+  },
+  {
+    "cca2": "MK",
+    "currency": ["MKD"],
+    "callingCode": ["389"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇲🇰",
+    "name": {
+      "common": "North Macedonia",
+      "official": "Republic of North Macedonia"
+    }
+  },
+  {
+    "cca2": "NO",
+    "currency": ["NOK"],
+    "callingCode": ["47"],
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "flag": "🇳🇴",
+    "name": {
+      "common": "Norway",
+      "official": "Kingdom of Norway"
+    }
+  },
+  {
+    "cca2": "PL",
+    "currency": ["PLN"],
+    "callingCode": ["48"],
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "flag": "🇵🇱",
+    "name": {
+      "common": "Poland",
+      "official": "Republic of Poland"
+    }
+  },
+  {
+    "cca2": "PT",
+    "currency": ["EUR"],
+    "callingCode": ["351"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇵🇹",
+    "name": {
+      "common": "Portugal",
+      "official": "Portuguese Republic"
+    }
+  },
+  {
+    "cca2": "RO",
+    "currency": ["RON"],
+    "callingCode": ["40"],
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "flag": "🇷🇴",
+    "name": {
+      "common": "Romania",
+      "official": "Romania"
+    }
+  },
+  {
+    "cca2": "RU",
+    "currency": ["RUB"],
+    "callingCode": ["7"],
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "flag": "🇷🇺",
+    "name": {
+      "common": "Russia",
+      "official": "Russian Federation"
+    }
+  },
+  {
+    "cca2": "SM",
+    "currency": ["EUR"],
+    "callingCode": ["378"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇸🇲",
+    "name": {
+      "common": "San Marino",
+      "official": "Republic of San Marino"
+    }
+  },
+  {
+    "cca2": "RS",
+    "currency": ["RSD"],
+    "callingCode": ["381"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇷🇸",
+    "name": {
+      "common": "Serbia",
+      "official": "Republic of Serbia"
+    }
+  },
+  {
+    "cca2": "SK",
+    "currency": ["EUR"],
+    "callingCode": ["421"],
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "flag": "🇸🇰",
+    "name": {
+      "common": "Slovakia",
+      "official": "Slovak Republic"
+    }
+  },
+  {
+    "cca2": "SI",
+    "currency": ["EUR"],
+    "callingCode": ["386"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇸🇮",
+    "name": {
+      "common": "Slovenia",
+      "official": "Republic of Slovenia"
+    }
+  },
+  {
+    "cca2": "ES",
+    "currency": ["EUR"],
+    "callingCode": ["34"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇪🇸",
+    "name": {
+      "common": "Spain",
+      "official": "Kingdom of Spain"
+    }
+  },
+  {
+    "cca2": "SE",
+    "currency": ["SEK"],
+    "callingCode": ["46"],
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "flag": "🇸🇪",
+    "name": {
+      "common": "Sweden",
+      "official": "Kingdom of Sweden"
+    }
+  },
+  {
+    "cca2": "CH",
+    "currency": ["CHF"],
+    "callingCode": ["41"],
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "flag": "🇨🇭",
+    "name": {
+      "common": "Switzerland",
+      "official": "Swiss Confederation"
+    }
+  },
+  {
+    "cca2": "UA",
+    "currency": ["UAH"],
+    "callingCode": ["380"],
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "flag": "🇺🇦",
+    "name": {
+      "common": "Ukraine",
+      "official": "Ukraine"
+    }
+  },
+  {
+    "cca2": "GB",
+    "currency": ["GBP"],
+    "callingCode": ["44"],
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "flag": "🇬🇧",
+    "name": {
+      "common": "United Kingdom",
+      "official": "United Kingdom of Great Britain and Northern Ireland"
+    }
+  },
+  {
+    "cca2": "VA",
+    "currency": ["EUR"],
+    "callingCode": ["379"],
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "flag": "🇻🇦",
+    "name": {
+      "common": "Vatican City",
+      "official": "Vatican City State"
+    }
+  },
+  {
+    "cca2": "AU",
+    "currency": ["AUD"],
+    "callingCode": ["61"],
+    "region": "Oceania",
+    "subregion": "Australia and New Zealand",
+    "flag": "🇦🇺",
+    "name": {
+      "common": "Australia",
+      "official": "Commonwealth of Australia"
+    }
+  },
+  {
+    "cca2": "FJ",
+    "currency": ["FJD"],
+    "callingCode": ["679"],
+    "region": "Oceania",
+    "subregion": "Melanesia",
+    "flag": "🇫🇯",
+    "name": {
+      "common": "Fiji",
+      "official": "Republic of Fiji"
+    }
+  },
+  {
+    "cca2": "KI",
+    "currency": ["AUD"],
+    "callingCode": ["686"],
+    "region": "Oceania",
+    "subregion": "Micronesia",
+    "flag": "🇰🇮",
+    "name": {
+      "common": "Kiribati",
+      "official": "Republic of Kiribati"
+    }
+  },
+  {
+    "cca2": "MH",
+    "currency": ["USD"],
+    "callingCode": ["692"],
+    "region": "Oceania",
+    "subregion": "Micronesia",
+    "flag": "🇲🇭",
+    "name": {
+      "common": "Marshall Islands",
+      "official": "Republic of the Marshall Islands"
+    }
+  },
+  {
+    "cca2": "FM",
+    "currency": ["USD"],
+    "callingCode": ["691"],
+    "region": "Oceania",
+    "subregion": "Micronesia",
+    "flag": "🇫🇲",
+    "name": {
+      "common": "Micronesia",
+      "official": "Federated States of Micronesia"
+    }
+  },
+  {
+    "cca2": "NR",
+    "currency": ["AUD"],
+    "callingCode": ["674"],
+    "region": "Oceania",
+    "subregion": "Micronesia",
+    "flag": "🇳🇷",
+    "name": {
+      "common": "Nauru",
+      "official": "Republic of Nauru"
+    }
+  },
+  {
+    "cca2": "NZ",
+    "currency": ["NZD"],
+    "callingCode": ["64"],
+    "region": "Oceania",
+    "subregion": "Australia and New Zealand",
+    "flag": "🇳🇿",
+    "name": {
+      "common": "New Zealand",
+      "official": "New Zealand"
+    }
+  },
+  {
+    "cca2": "PW",
+    "currency": ["USD"],
+    "callingCode": ["680"],
+    "region": "Oceania",
+    "subregion": "Micronesia",
+    "flag": "🇵🇼",
+    "name": {
+      "common": "Palau",
+      "official": "Republic of Palau"
+    }
+  },
+  {
+    "cca2": "PG",
+    "currency": ["PGK"],
+    "callingCode": ["675"],
+    "region": "Oceania",
+    "subregion": "Melanesia",
+    "flag": "🇵🇬",
+    "name": {
+      "common": "Papua New Guinea",
+      "official": "Independent State of Papua New Guinea"
+    }
+  },
+  {
+    "cca2": "WS",
+    "currency": ["WST"],
+    "callingCode": ["685"],
+    "region": "Oceania",
+    "subregion": "Polynesia",
+    "flag": "🇼🇸",
+    "name": {
+      "common": "Samoa",
+      "official": "Independent State of Samoa"
+    }
+  },
+  {
+    "cca2": "SB",
+    "currency": ["SBD"],
+    "callingCode": ["677"],
+    "region": "Oceania",
+    "subregion": "Melanesia",
+    "flag": "🇸🇧",
+    "name": {
+      "common": "Solomon Islands",
+      "official": "Solomon Islands"
+    }
+  },
+  {
+    "cca2": "TO",
+    "currency": ["TOP"],
+    "callingCode": ["676"],
+    "region": "Oceania",
+    "subregion": "Polynesia",
+    "flag": "🇹🇴",
+    "name": {
+      "common": "Tonga",
+      "official": "Kingdom of Tonga"
+    }
+  },
+  {
+    "cca2": "TV",
+    "currency": ["AUD"],
+    "callingCode": ["688"],
+    "region": "Oceania",
+    "subregion": "Polynesia",
+    "flag": "🇹🇻",
+    "name": {
+      "common": "Tuvalu",
+      "official": "Tuvalu"
+    }
+  },
+  {
+    "cca2": "VU",
+    "currency": ["VUV"],
+    "callingCode": ["678"],
+    "region": "Oceania",
+    "subregion": "Melanesia",
+    "flag": "🇻🇺",
+    "name": {
+      "common": "Vanuatu",
+      "official": "Republic of Vanuatu"
+    }
+  }
+]

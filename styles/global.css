@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+
+.modal-layout {
+  animation: shiftUp 0.4s;
+}
+@keyframes popup {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shiftUp {
+  0% {
+    transform: translateY(-300);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
+
+.bgblue-custom{
+  background-color: #1194FF;
+}
+.bd-color{
+  border-color: #9CA3AF;
+}
+
+.textblue-custom{
+  color: #0E76CC;
+}
