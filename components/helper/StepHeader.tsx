@@ -39,7 +39,7 @@ export default function StepHeader({title, step, total, onPress, forwardPress}: 
       </View>
       {step<3?
         <View className="w-8" />:
-        <Pressable className="px-2" onPress={onPress}>
+        <Pressable className="px-2" onPress={forwardPress}>
           <CustomText className="text-sm textblue-custom">Skip</CustomText>
         </Pressable>
       }

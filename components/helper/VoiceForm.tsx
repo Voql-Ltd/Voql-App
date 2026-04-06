@@ -1,6 +1,5 @@
-import { TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 import CustomText from "./CustomText";
-import LoadButton from './LoadButton';
 import VoiceRecorder from "./VoiceRecorderInput";
 
 interface VoiceFormFieldsProps {
@@ -21,19 +20,26 @@ export default function VoiceForm(
     setVoiceFormData({...voiceFormData, [value]:voice_uri})
   } 
   return(
-    <View className=" items-start">
-      <View className="gap-y-5">
+    <View className=" flex-1">
+      <View className="gap-y-5  flex-1 w-full">
         {voiceFormFields.map(({value, label, descr}, index) => (
-          <View key={index} style={currSubStep===index?{}:{display:'none'}}>  
-            <CustomText className="text-2xl">
-                {label}
-            </CustomText>
-            <CustomText className="text-lg mt-3">
-                {descr}
-            </CustomText>
-            <VoiceRecorder onSave={(voice_uri:string)=>onVoiceUpload(voice_uri, value)}
-                value={voiceFormData[value] || ''}    
-            />
+          <View key={index} 
+            className="flex-col flex-1 justify-between"
+            style={currSubStep===index?{}:{display:'none'}}>  
+            <View className="px-4">
+                <CustomText className="text-2xl">
+                    {label}
+                </CustomText>
+                <CustomText className="text-base mt-3  text-[#6A6970]">
+                    {descr}
+                </CustomText>
+            </View>
+            <View id="bb" className="">
+                <VoiceRecorder onSave={(voice_uri:string)=>onVoiceUpload(voice_uri, value)}
+                    value={voiceFormData[value] || ''}    
+                />
+            </View>
+            <View/>
           </View>
         ))}
       </View>

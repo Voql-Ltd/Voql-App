@@ -1,6 +1,6 @@
-import { AudioModule, useAudioPlayer, useAudioRecorder } from "expo-audio";
+import { AudioModule, RecordingPresets, useAudioPlayer, useAudioRecorder } from "expo-audio";
 import React, { useEffect, useRef, useState } from "react";
-import { Alert, Dimensions, Pressable, StyleSheet, View } from "react-native";
+import { Alert, Dimensions, Pressable, StyleSheet, Text, View } from "react-native";
 import Animated, {
     useAnimatedStyle,
     useSharedValue,
@@ -8,10 +8,7 @@ import Animated, {
 } from "react-native-reanimated";
 
 import MicIcon from '@/assets/images/icons/mic.svg';
-import PauseIcon from '@/assets/images/icons/pause.svg';
-import PlayIcon from '@/assets/images/icons/play.svg';
-import RefreshIcon from '@/assets/images/icons/refresh.svg';
-import TickIcon from '@/assets/images/icons/tick.svg';
+import CustomText from "./CustomText";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
@@ -106,19 +103,13 @@ export default function VoiceRecorder({onSave, value}:{onSave:(t:string)=>void, 
     setUri(null);
     stopTimer();
   };
-  const [playing, setPlaying]= useState(false)
+
   // Playback
   const play = async () => {
-    setPlaying(true)
-    await player.play();
+    player.play();
   };
-    const pause = async () => {
-    await player.pause();
-    setPlaying(false)
-  };
+
   const restart = () => {
-    setPlaying(false)
-    setRecording(false)
     setUri(null);
   };
 
@@ -143,11 +134,10 @@ export default function VoiceRecorder({onSave, value}:{onSave:(t:string)=>void, 
   }, []);
   
   return (
-    <>
     <View style={styles.container} className="relative w-full">
       {/* Waveform */}
        {/* <Waveform idle={!recording}/> */}
-      {!uri ? <Waveform metering={status.metering} recording={recording}/>:null}
+      <Waveform metering={status.metering} recording={recording} />
       {/* {recording && <Text style={styles.timer}>{formatTime(time)}</Text>} */}
 
       {/* Record Button */}
@@ -171,20 +161,12 @@ export default function VoiceRecorder({onSave, value}:{onSave:(t:string)=>void, 
       {/* Playback */}
       {uri && (
         <View style={styles.controls}>
-          <Pressable className="rounded-full items-center justify-center" onPress={playing?()=>pause():()=>play()}>
-            <View className="bg-[#FFC107] rounded-full p-3 items-center justify-center">
-              {playing?<PauseIcon />:<PlayIcon  />}
-            </View>
+          <Pressable onPress={play}>
+            <Text>▶️ Play</Text>
           </Pressable>
-          <Pressable className="rounded-full items-center justify-center"  onPress={restart}>
-            <View className="bg-[#1194FF] rounded-full p-3 items-center justify-center">
-              <RefreshIcon />
-            </View>
-          </Pressable>
-          <Pressable className="rounded-full items-center justify-center"  onPress={()=>null}>
-            <View className="bg-green-500 rounded-full p-3 items-center justify-center">
-              <TickIcon/>
-            </View>
+
+          <Pressable onPress={restart}>
+            <Text>🔁 Restart</Text>
           </Pressable>
         </View>
       )}
@@ -195,21 +177,7 @@ export default function VoiceRecorder({onSave, value}:{onSave:(t:string)=>void, 
           <Text>⬅ Slide to cancel</Text>
         </Animated.View>
       )} */}
-    
     </View>
-    {/* <View className='px-5 mt-6'>
-    <TouchableOpacity
-        onPress={()=>{
-        
-
-        }}
-        className="mt-8 bgblue-custom w-full py-4 rounded-lg"
-        disabled={recording}
-    >
-        <CustomText className="text-white text-center text-lg">Continue</CustomText>
-    </TouchableOpacity>
-    </View> */}
-    </>
   );
 }
 
@@ -229,7 +197,6 @@ function Waveform({ metering = -160, recording }: any) {
                 key={i}
                 style={{
                 height,
-                width:3,
                 marginHorizontal: 1,
                 backgroundColor: recording ? "#1194FF" : "#E0E0E1",
                 }}
@@ -278,10 +245,7 @@ const styles = StyleSheet.create({
 //   },
   controls: {
     flexDirection: "row",
-    justifyContent:'space-between',
-    alignItems:'center',
-    width:'100%',
-    paddingHorizontal:30
+    gap: 20,
   },
   slideText: {
     position: "absolute",
@@ -290,9 +254,9 @@ const styles = StyleSheet.create({
   wave: {
     flexDirection: "row",
     alignItems: "center",
-    height:'100%',
+    // height:'100%',
     marginBottom: 10,
-    position:'absolute',
+    // position:'absolute',
     top:0,
     right:0,left:0,
     width:'100%'

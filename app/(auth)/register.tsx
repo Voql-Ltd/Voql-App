@@ -1,4 +1,4 @@
-import { AltePhone, CustomText, LoadButton, OTPbox, ProfileForm, StepHeader, VoiceForm } from "@/components";
+import { AddFriends, AltePhone, CustomText, LoadButton, OTPbox, ProfileForm, StepHeader, VoiceForm } from "@/components";
 import { router, useLocalSearchParams, useRouter } from "expo-router";
 import { BackHandler, Pressable, TouchableOpacity, View } from "react-native";
 
@@ -26,10 +26,7 @@ export default function Register() {
   )
 }
 function ParentComponent(){
-    const btnChoices=[
-    {className:'mlog-bg-blue', label:'Yes, proceed', icon:'', iconOrder:3},
-    {className:'bg-black', label:'No, go back', icon:'', iconOrder:1}
-    ]
+    
     const router = useRouter()
     const {step, setStep}= useContext(RegisterContext)
     const {isScrollOffset, setIsScrollOffset} = useContext(ScreenViewContext)
@@ -65,7 +62,7 @@ function ParentComponent(){
             forwardPress={()=>setStep(step+1)}
             onPress={step?()=>setStep(step-1):()=>router.back()}/>
           {/* <GoBack route={step?()=>setStep(step-1):()=>router.back()} ignoreParams={true}/> */}
-          <View className='px-4 mt-8'>
+          <View className='mt-8' style={step===3?{paddingHorizontal:0}:{paddingHorizontal:16}}>
             {!step?
               <Step1EnterPhone/>:
             step===1?
@@ -75,12 +72,12 @@ function ParentComponent(){
             step===3?
               <Step4VoiceTags/>:
             step===4?
-              <View/>:
+              <Step5AddContacts/>:
             step===5?
               <View/>:
             step===6?
               <View/>
-            :<View/>    
+            :null    
             }
           </View>    
         </View>
@@ -167,7 +164,7 @@ function Step1EnterPhone(){
           // setFormData({...formData, countryCode:phoneInput.current?.getCountryCode() || ""});
 
         }}
-        className="mt-[170px] bgblue-custom w-full py-4 rounded-lg"
+        className="mt-[150px] bgblue-custom w-full py-4 rounded-lg"
         disabled={!phoneInput.current?.isValidNumber(formData.phoneNumber)}
         isLoading={sendLoading}
       >
@@ -303,7 +300,7 @@ function Step4VoiceTags(){
       }
     ]
   return(
-    <View>
+    <View className="w-full h-full">
       {subStep<2?
       <VoiceForm 
         onNext={()=>setSubStep(subStep+1)} voiceFormData={voiceFormData}
@@ -314,7 +311,7 @@ function Step4VoiceTags(){
       />
       :
       <View>
-        <CustomText className="text-2xl">
+        <CustomText className="text-2xl ">
           Does this sound right?
         </CustomText>
         <CustomText className="text-base text-[#6A6970] mt-3">
@@ -350,6 +347,14 @@ function Step4VoiceTags(){
         </LoadButton>
       </View>
       }
+    </View>
+  )
+}
+
+function Step5AddContacts(){
+  return(
+    <View>
+      <AddFriends onNext={()=>null}/>
     </View>
   )
 }

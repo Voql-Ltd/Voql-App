@@ -1,5 +1,9 @@
 // import PhoneInput from "./helper/PhoneNumberInput/PhoneNumberInput";
 
+export {default as AddFriends} from "./helper/AddFriends";
+
+export {default as SearchButtonHelper} from "./helper/SearchButtonHelper";
+
 export {default as VoiceForm} from "./helper/VoiceForm";
 export {default as VoiceRecorder} from "./helper/VoiceRecorderInput";
 

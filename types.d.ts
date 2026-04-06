@@ -39,7 +39,7 @@ declare module "*.gif" {
 }
 
 declare module "*.svg" {
-  const value: any;
+const value: any;
   export default value;
 }
 
