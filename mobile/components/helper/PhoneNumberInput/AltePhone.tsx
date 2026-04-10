@@ -1,9 +1,9 @@
 import { countries } from "@/config/countries";
+import { Ionicons } from "@expo/vector-icons";
 import { PhoneNumberUtil } from 'google-libphonenumber';
 import React, { forwardRef, useImperativeHandle, useState } from 'react';
 import { Image, Modal, Platform, TextInput, TextStyle, TouchableOpacity, View, ViewStyle } from 'react-native';
 import CustomText from '../CustomText';
-import { Ionicons } from "@expo/vector-icons";
 
 // Transform countries data to the format we need
 const COUNTRIES = countries.map(country => ({
@@ -24,7 +24,7 @@ interface PhoneInputProps {
   disabled?: boolean;
   onChangeCountry?: (country: typeof COUNTRIES[0]) => void;
   onChangeText?: (text: string) => void;
-  onChangeFormattedText?: (formattedText: string) => void;
+  onChangeFormattedText?: (data: { formattedText: string; countryName: string; countryCode: string }) => void;
   containerStyle?: ViewStyle;
   textInputStyle?: TextStyle ;
   autoFocus?: boolean;
@@ -77,9 +77,13 @@ const AltePhone = forwardRef<PhoneInputRef, PhoneInputProps>(({
       const formatted = phoneNumber.length > 0 
         ? `+${selectedCountry.callingCode}${phoneNumber}`
         : phoneNumber;
-      onChangeFormattedText(formatted);
+      onChangeFormattedText({
+        formattedText: formatted,
+        countryName: selectedCountry.name,
+        countryCode: selectedCountry.code
+      });
     }
-  }, [phoneNumber, selectedCountry.callingCode]);
+  }, [phoneNumber, selectedCountry.callingCode, selectedCountry.name, selectedCountry.code]);
 
   // Expose methods via ref
   useImperativeHandle(ref, () => ({

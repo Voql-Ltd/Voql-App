@@ -14,6 +14,10 @@ interface RegisterContextType {
   setStep: (step: number) => void;
   voiceFormData: VoiceFormData;
   setVoiceFormData: (data: VoiceFormData) => void;
+  otp: string;
+  setOtp: (otp: string) => void;
+  file: FormData;
+  setFile: (file: FormData) => void;
 }
 
 export const RegisterContext = createContext<RegisterContextType>(
@@ -23,7 +27,11 @@ export const RegisterContext = createContext<RegisterContextType>(
         step: 0,
         setStep: () => {},
         voiceFormData:{},
-        setVoiceFormData:()=>{}
+        setVoiceFormData:()=>{},
+        otp: '',
+        setOtp: () => {},
+        file:{},
+        setFile: () => {},
     }
 )
 
@@ -34,13 +42,17 @@ interface RegisterContextComponentProps {
 export default function RegisterContextComponent(
     {children}: RegisterContextComponentProps){ 
     const [formData, setFormData]= useState<FormData>({})
-    const [step, setStep ]= useState<number>(2)
+    const [step, setStep ]= useState<number>(0)
     const [voiceFormData, setVoiceFormData]= useState<FormData>({})
-    
+    const [otp, setOtp] = useState<string>('');
+    const [file, setFile] = useState<FormData>({});
+
     return(
         <RegisterContext.Provider value={{
            formData, setFormData, step, setStep,
-           voiceFormData, setVoiceFormData
+           voiceFormData, setVoiceFormData,
+           otp, setOtp,
+           file, setFile
         }}>
             {children}
         </RegisterContext.Provider>

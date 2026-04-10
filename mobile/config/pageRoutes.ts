@@ -36,7 +36,7 @@ interface AuthScreens {
 const PAGE_ROUTES = {
   HOME_SCREEN: "/",
   LANDING_SCREEN: "/landing-page",
-  LOGGED_IN_SCREEN: "/home",
+  LOGGED_IN_SCREEN: "(main)/chats",
   DASHBOARD: "/dashboard",
   WELCOME_SCREEN: "/(auth)/welcome",
   AUTH_SCREENS: {

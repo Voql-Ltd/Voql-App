@@ -2,17 +2,17 @@ import { AddFriends, AltePhone, CustomText, LoadButton, OTPbox, ProfileForm, Ste
 import { router, useLocalSearchParams, useRouter } from "expo-router";
 import { BackHandler, Pressable, TouchableOpacity, View } from "react-native";
 
-import { PAGE_ROUTES } from "@/config";
+import { consolelog, PAGE_ROUTES } from "@/config";
 import { useFocusEffect } from "expo-router";
 
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
 
+import API_ROUTES from "@/config/apiRoutes";
 import { RegisterContext, RegisterContextComponent, ScreenViewContext, ScreenViewContextComponent } from "@/context";
-import { useToast } from "@/hooks";
+import { useHttpServices, useSingleFile, useToast } from "@/hooks";
 import { useMutation } from "@tanstack/react-query";
 import { SafeAreaView } from "react-native-safe-area-context";
 // import {useNetworkState} from "@/hooks/useNetworkState";
-
 
 export default function Register() {
 
@@ -101,6 +101,7 @@ function Step1EnterPhone(){
   // );
   // const {isOffline} = useNetworkState();
   const {formData, setFormData, setStep}= useContext(RegisterContext)
+  const [tryCount, setTryCount] = useState(0)
   useEffect(() => {
     if(!searchParams?.phoneNumber){
       return;
@@ -113,16 +114,27 @@ function Step1EnterPhone(){
     }));
   }, []);
 
-  const sendOtpQuery=()=>{
-    return Promise.resolve({})
-  }
+  const {postData} = useHttpServices();
+  
+  const sendOtpQuery = async () => {
+    return await postData({
+      path: API_ROUTES.SEND_OTP_GUEST,
+      body: {
+        tryCount,
+        phone: formData.formattedValue,
+      }
+    });
+  };
+  
   const {mutate:sendOtp, isPending:sendLoading}=useMutation({
       mutationFn: sendOtpQuery,
-      onError: ({error}:{error:any}) => {
-        
-        return NotifyError(error?.message || 'Could not send OTP')
+      onError: (error:any) => {
+        consolelog(error)
+        return NotifyError(error?.error?.message || 'Could not send OTP')
       },
       onSuccess: () => {
+        setStep(1);
+        setTryCount(tryCount+1)
         return NotifySuccess('OTP sent successfully')
       }
   })
@@ -136,11 +148,12 @@ function Step1EnterPhone(){
         onChangeText={(text: string) => {
           setFormData({...formData, phoneNumber:text})
         }}
-        onChangeFormattedText={(text: string) => {
+        onChangeFormattedText={(data) => {
           setFormData({
             ...formData, 
-            formattedValue: text,
-            countryCode: phoneInput.current?.getCountryCode() || formData.countryCode
+            formattedValue: data.formattedText,
+            countryName: data.countryName,
+            countryCode: data.countryCode
           })
         }}
         disabled={false}
@@ -159,7 +172,9 @@ function Step1EnterPhone(){
           const checkValid = phoneInput.current?.isValidNumber(formData.phoneNumber);
           console.log('checkValid', checkValid);
           console.log('formData', formData);
-          setStep(1);
+          if(checkValid){
+            sendOtp();
+          }
           // setFormData({...formData, isValid:checkValid ? checkValid : false});
           // setFormData({...formData, countryCode:phoneInput.current?.getCountryCode() || ""});
 
@@ -174,43 +189,47 @@ function Step1EnterPhone(){
   )
 }
 function Step2VerifyPhone(){
-  const [otp, setOtp] = useState('');
-  const {setStep, formData} = useContext(RegisterContext)
+
+  const {setStep, formData, otp, setOtp} = useContext(RegisterContext)
+  const {NotifyError, NotifySuccess}= useToast()
+  const [verifiedOtp, setVerifiedOtp] = useState(false)
+  const {postData} = useHttpServices();
   
-  const verifyOtpQuery = ({otp, phone}:{otp:string, phone:string})=>{
-    return new Promise((resolve, reject) => {
-      resolve(true)
-    })
+  const verifyOtpQuery = async (otp:string) => {
+    return await postData({
+      path: API_ROUTES.VERIFY_OTP,
+      body: {otp, phone:formData.formattedValue}
+    });
   };
   
   const {mutate:verifyOtp, isPending:sendLoading}=useMutation({
-      mutationFn: ({otp, phone}:{otp:string, phone:string})=>verifyOtpQuery({otp, phone}),
-      onError: ({error}:{error:any}) => {
-        
-        // return NotifyError(error?.message || 'Could not send OTP')
+      mutationFn: verifyOtpQuery,
+      onError: (error:any) => {
+        setVerifiedOtp(true)
+        setOtp('')
+        return NotifyError(error?.error?.message || 'Could not verify OTP')
       },
       onSuccess: () => {
-        setStep(2)
-        // return NotifySuccess('OTP sent successfully')
+        setStep(2);
+        setOtp('')
+        setVerifiedOtp(true)
+        return NotifySuccess('OTP verified successfully')
       }
   })
 
   useEffect(()=>{
     if(sendLoading) return
+    if(verifiedOtp) return
     if(otp.length===6){
-      const otp_data={
-        otp:otp,
-        phone:formData.phoneNumber
-      }
-      verifyOtp(otp_data)
+      verifyOtp(otp)
     }
-  }, [otp, sendLoading])
+  }, [otp, sendLoading, verifiedOtp])
   
   return(
     <View className="py-5 px-3">
       <OTPbox value={otp} 
         length={6}
-        label={"Enter the 6-digit code sent via SMS to "+formData.phoneNumber}
+        label={"Enter the 6-digit code sent via SMS to "+formData.formattedValue}
         onChangeOTP={(otpString:string)=>setOtp(otpString)}/>
       <CustomText className="mt-5 text-center">
         {'Didn\'t receive the code? '}
@@ -218,7 +237,7 @@ function Step2VerifyPhone(){
       </CustomText>
      <LoadButton
         onPress={()=>{
-          verifyOtp({otp, phone:formData.phoneNumber})
+          verifyOtp(otp)
           setStep(2);
         }}
         className="bg-blue-custom w-full py-4 rounded-xl mt-[100px]"
@@ -231,33 +250,14 @@ function Step2VerifyPhone(){
   )
 }
 function Step3CompleteProfile(){
-  const {setStep, formData, setFormData}= useContext(RegisterContext)
-  const [focused, setFocused] = useState('');
-  const createAccQuery=()=>{
-    return Promise.resolve({})
-  }
-  const {mutate:createAcc, isPending:isLoading}=useMutation({
-      mutationFn: createAccQuery,
-      onError: ({error}:{error:any}) => {
-        
-        // return NotifyError(error?.message || 'Could not send OTP')
-      },
-      onSuccess: () => {
-        // return NotifySuccess('OTP sent successfully')
-      }
-  })
+  const {setStep, formData, setFormData, otp}= useContext(RegisterContext)
+  
   return(
     <ProfileForm 
-      isLoading={isLoading}
-      onPress={() => setStep(3)} 
+      onNext={() =>setStep(3)} 
       formData={formData} 
+      otp={otp}
       setFormData={setFormData} 
-      setPhotoURL={(url:string)=>{
-        setFormData({
-          ...formData,
-          photoURL: url
-        })
-      }}
     />
   )
 }

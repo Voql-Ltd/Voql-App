@@ -1,7 +1,7 @@
-import axios from "axios";
-// import { baseURL, consolelog } from "../src/config";
-import useCookies from "./useCookies";
 import { baseURL, consolelog } from "@/config";
+import axios from "axios";
+import { useState } from "react";
+import useCookies from "./useCookies";
 
 interface HttpServiceParams {
   path: string;
@@ -13,20 +13,29 @@ interface ProtectedHttpServiceParams extends HttpServiceParams {
   userType?: string;
 }
 
-const useHttpServices = () => {
+type UseHttpServicesProps = {
+  baseURL?: string;
+};
+
+export const useHttpServices = ({
+  baseURL: customBaseURL = baseURL,
+}: UseHttpServicesProps = {}) => {
   const {getItemInSession}= useCookies()
+  const [loading, setLoading] = useState(false);
   
   const postData = async ({path, body}: HttpServiceParams) => {
-    consolelog({body,baseURL})
+    consolelog({body, url: `${customBaseURL}/${path}`})
     try {
-      const { data } = await axios.post(`${baseURL}/${path}`, body);
+      setLoading(true);
+      const { data } = await axios.post(`${customBaseURL}/${path}`, body);
       return data;
     } catch (e: any) {
-      consolelog(e?.response?.data?.error?.message);
+      // consolelog(e?.response || e?.response?.data)
+      consolelog(e?.response?.data);
       const error=e?.response?.data;
       throw error;
     } finally {
-      
+      setLoading(false);
     }
   };
   const postDataWithoutBaseUrl = async ({path,body}: {path: string; body: any}) => {
@@ -65,8 +74,8 @@ const useHttpServices = () => {
       authorization: `Bearer ${userType==="vendor"?token:token}`,
     }
     try {
-      
-      const { data } = await axios.post(`${baseURL}/${path}`, body, {headers});
+      setLoading(true);
+      const { data } = await axios.post(`${customBaseURL}/${path}`, body, {headers});
       consolelog(data.status);
       return data
     } catch (e: any) {
@@ -75,8 +84,7 @@ const useHttpServices = () => {
         consolelog(e.response)
         throw error;
     } finally {
-      
-      
+      setLoading(false);
     }
   };
   
@@ -90,9 +98,8 @@ const useHttpServices = () => {
     consolelog({headers})
 
     try {
-;
-      // const response=await axios.put(`${baseUrl}/bootcamps/edit/${btcId}`, formData,{headers})
-      const { data } = await axios.put(`${baseURL}/${path}`, body, {headers});
+      setLoading(true);
+      const { data } = await axios.put(`${customBaseURL}/${path}`, body, {headers});
       consolelog(data.status);
       return data
     } catch (e: any) {
@@ -100,22 +107,19 @@ const useHttpServices = () => {
         const error=e?.response?.data;
         throw error;
     } finally {
-      
-      
+      setLoading(false);
     }
   };
   const patchProtectedData = async ({path, body = {}, userType}: ProtectedHttpServiceParams) => {
     consolelog({path})
     let token = await getItemInSession({key: 'access_token'})
 
-
     const headers={
       authorization: `Bearer ${userType==="vendor"?token:token}`,
     }
     try {
-
-      // const response=await axios.put(`${baseUrl}/bootcamps/edit/${btcId}`, formData,{headers})
-      const { data } = await axios.patch(`${baseURL}/${path}`, body, {headers});
+      setLoading(true);
+      const { data } = await axios.patch(`${customBaseURL}/${path}`, body, {headers});
       consolelog(data.status);
       return data
     } catch (e: any) {
@@ -123,21 +127,19 @@ const useHttpServices = () => {
         const error=e?.response?.data;
         throw error;
     } finally {
-      
-      
+      setLoading(false);
     }
   };
   const deleteProtectedData = async ({path, body = {}, userType}: ProtectedHttpServiceParams) => {
     consolelog({path})
     let token = await getItemInSession({key: 'access_token'})
 
-
     const headers={
       authorization: `Bearer ${userType==="vendor"?token:token}`,
     }
     try {
-
-      const { data } = await axios.delete(`${baseURL}/${path}`, {headers, data:body});
+      setLoading(true);
+      const { data } = await axios.delete(`${customBaseURL}/${path}`, {headers, data:body});
       consolelog(data.status);
       return data
     }  catch (e: any) {
@@ -145,19 +147,16 @@ const useHttpServices = () => {
       const error=e?.response?.data;
       throw error;
     } finally {
-      
-      
+      setLoading(false);
     }
   };
   const getProtectedData = async ({path, userType}: {path: string; userType?: string}) => {
     consolelog({path})
     let token = await getItemInSession({key: 'access_token'})
 
-    // consolelog({token})
     try {
-      // consolelog({token})
-      // const { data } 
-      const {data}= await axios.get(`${baseURL}/${path}`, {
+      setLoading(true);
+      const {data}= await axios.get(`${customBaseURL}/${path}`, {
         headers: {
           authorization: `Bearer ${userType==="vendor"?token:token}`,
         },
@@ -167,25 +166,25 @@ const useHttpServices = () => {
       const e=error?.response?.data;
       throw e
     } finally {
-    
+      setLoading(false);
     }
   };
   const getData = async ({path}: {path: string}) => {
     try {
-      const { data } = await axios.get(`${baseURL}/${path}`);
-      
+      setLoading(true);
+      const { data } = await axios.get(`${customBaseURL}/${path}`);
       return data;
     } catch (e: any) {
-      // consolelog(error?.response?.status);
-      // consolelog(error?.response?.data?.error?.message);
       const error=e?.response?.data;
       throw error;
     } finally {
+      setLoading(false);
     }
   };
 
   
   return {
+    loading,
     postData,
     postProtectedData,
     putProtectedData,

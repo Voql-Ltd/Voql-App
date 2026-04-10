@@ -1,7 +1,8 @@
 const API_ROUTES = {
-  REGISTRATION:'auth/signup',
-  SEND_EMAIL:'auth/send-email-verification',
-  VERIFY_EMAIL_TOKEN:({uid, token}:{uid:string, token:string})=>`/auth/verify-email?token=${token}&uid=${uid}`,
+  SIGN_IN:'auth/sign-in',
+  SIGN_UP:'auth/sign-up',
+  SEND_OTP_GUEST:'auth/send-otp-guest',
+  VERIFY_OTP:'auth/verify-otp',
   BRAND_NAME:'Voql'
 };
 

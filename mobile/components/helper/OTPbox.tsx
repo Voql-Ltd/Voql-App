@@ -22,6 +22,10 @@ export default function OTPbox({
   const focusNext = (index: number) => {
     inputsRef.current[index + 1]?.focus();
   };
+
+  const focusPrevious = (index: number) => {
+    inputsRef.current[index - 1]?.focus();
+  };
   return (
     <View className='gap-y-5'>
       {/* <></> */}
@@ -57,6 +61,11 @@ export default function OTPbox({
                   focusNext(index)
                 }
                 
+              }}
+              onKeyPress={({ nativeEvent }) => {
+                if (nativeEvent.key === 'Backspace' && !value[index] && index > 0) {
+                  focusPrevious(index);
+                }
               }}
             />
           </View>
