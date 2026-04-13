@@ -5,6 +5,7 @@ interface CustomTextProps extends TextProps {
   font_fam?: 'normal' | 'bold' | 'semibold' | 'italic' | string;
   children?: React.ReactNode;
   style?: StyleProp<TextStyle>;
+  
 }
 
 export default function CustomText({className, font_fam='normal', children, ...props}: CustomTextProps) {

@@ -69,19 +69,19 @@ export const useHttpServices = ({
   const postProtectedData = async ({path, body = {}, userType}: ProtectedHttpServiceParams) => {
     consolelog({path})
     let token = await getItemInSession({key: 'access_token'})
-    consolelog({token})
+    // consolelog({token,body})
     const headers={
       authorization: `Bearer ${userType==="vendor"?token:token}`,
     }
     try {
       setLoading(true);
       const { data } = await axios.post(`${customBaseURL}/${path}`, body, {headers});
-      consolelog(data.status);
+      // consolelog(data.status);
       return data
     } catch (e: any) {
         consolelog(e?.response?.data?.error?.message);
         const error=e?.response?.data;
-        consolelog(e.response)
+        consolelog(e.response?.data)
         throw error;
     } finally {
       setLoading(false);

@@ -9,7 +9,7 @@ import { useCallback, useContext, useEffect, useRef, useState } from "react";
 
 import API_ROUTES from "@/config/apiRoutes";
 import { RegisterContext, RegisterContextComponent, ScreenViewContext, ScreenViewContextComponent } from "@/context";
-import { useHttpServices, useSingleFile, useToast } from "@/hooks";
+import { useHttpServices, useToast } from "@/hooks";
 import { useMutation } from "@tanstack/react-query";
 import { SafeAreaView } from "react-native-safe-area-context";
 // import {useNetworkState} from "@/hooks/useNetworkState";
@@ -59,7 +59,7 @@ function ParentComponent(){
         <View className='relative'>
           
           <StepHeader title={stepLabels[step]} step={step} total={5} 
-            forwardPress={()=>setStep(step+1)}
+            forwardPress={step===4?()=>router.push(PAGE_ROUTES.LOGGED_IN_SCREEN as any):()=>setStep(step+1)}
             onPress={step?()=>setStep(step-1):()=>router.back()}/>
           {/* <GoBack route={step?()=>setStep(step-1):()=>router.back()} ignoreParams={true}/> */}
           <View className='mt-8' style={step===3?{paddingHorizontal:0}:{paddingHorizontal:16}}>
@@ -73,11 +73,11 @@ function ParentComponent(){
               <Step4VoiceTags/>:
             step===4?
               <Step5AddContacts/>:
-            step===5?
-              <View/>:
-            step===6?
-              <View/>
-            :null    
+            // step===5?
+            //   <View/>:
+            // step===6?
+            //   <View/>
+            null    
             }
           </View>    
         </View>
@@ -190,7 +190,7 @@ function Step1EnterPhone(){
 }
 function Step2VerifyPhone(){
 
-  const {setStep, formData, otp, setOtp} = useContext(RegisterContext)
+  const {setStep, formData, otp, setOtp, setFormData} = useContext(RegisterContext)
   const {NotifyError, NotifySuccess}= useToast()
   const [verifiedOtp, setVerifiedOtp] = useState(false)
   const {postData} = useHttpServices();
@@ -210,6 +210,7 @@ function Step2VerifyPhone(){
         return NotifyError(error?.error?.message || 'Could not verify OTP')
       },
       onSuccess: () => {
+        setFormData({...formData, otp})
         setStep(2);
         setOtp('')
         setVerifiedOtp(true)

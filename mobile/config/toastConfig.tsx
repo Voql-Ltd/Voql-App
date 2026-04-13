@@ -1,6 +1,7 @@
 import { Text, View, TextStyle, ViewStyle } from "react-native";
 import React from 'react';
 import { ReactNode } from 'react';
+import { Ionicons } from "@expo/vector-icons";
 // import GreenTick from '../../assets/svg/tick-green.svg';
 // import { CustomText } from "../components";
 
@@ -47,7 +48,8 @@ export const toastConfig = {
         {text1}
       </Text>
       {/* <GreenTick width={24} height={24}/> */}
-      <Text style={{ fontSize: 20, color: '#059669' } as TextStyle}>✓</Text>
+      {/* <Text style={{ fontSize: 20, color: '#059669' } as TextStyle}>✓</Text> */}
+      <Ionicons name="checkmark-sharp" size={24} color="#059669" />
     </View>
   ),
 };

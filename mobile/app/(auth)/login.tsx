@@ -186,7 +186,7 @@ function Step2VerifyPhone({
     //   consolelog({ login: data });
       consolelog({loginData:data?.data});
     //   await login(data?.data?.token);
-    NotifySuccess('Logged in successfully')
+      NotifySuccess('Logged in successfully')
             // consolelog({sreg:data})
       setHasVerified(true);
       setOtp('')

@@ -1,5 +1,6 @@
+import { Ionicons } from "@expo/vector-icons";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { Text, TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import CustomText from "./CustomText";
 
 interface GoBackProps {
@@ -9,6 +10,7 @@ interface GoBackProps {
   whiteArr?: boolean;
   ignoreParams?: boolean;
   showLabel?: boolean;
+  extraComponent?: React.ReactNode;
 }
 
 export default function GoBack({
@@ -18,23 +20,26 @@ export default function GoBack({
   whiteArr = false,
   ignoreParams = false,
   showLabel = false,
+  extraComponent=null,
 }: GoBackProps) {
   const router = useRouter();
   const { goBackTitle = 'Home', goBackLink = '/screens/home' } = useLocalSearchParams();
 
   return (
-    <View style={style} className="flex-row w-fit items-center px-4">
+    <View style={style} className="flex-row items-center px-4 justify-between">
       <TouchableOpacity
-        className="bg-[#E5E7EB] rounded-full p-3 flex-row items-center gap-x-5"
-        onPress={ignoreParams ? () => route?.() : () => router.push(goBackLink as any)}
+        className=""
+        onPress={!route ? () => router.back() : () => route?.()}
       >
-        <Text style={{ fontSize: 16 }}>{whiteArr ? "←" : "←"}</Text>
-        {showLabel ? (
-          <CustomText font_fam="bold" className="text-xl">
+        <Ionicons name="caret-back" size={25} />
+        
+      </TouchableOpacity>
+      {showLabel ? (
+          <CustomText className="text-xl">
             {label}
           </CustomText>
         ) : null}
-      </TouchableOpacity>
+        {extraComponent || <View/>}
     </View>
   );
 }

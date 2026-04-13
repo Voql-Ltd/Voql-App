@@ -4,22 +4,6 @@ interface TabScreen {
   label: string;
 }
 
-interface MoreScreen {
-  route: string;
-  icon: string;
-  label: string;
-}
-
-interface CompScreens {
-  SEE_MORE: (id: string) => string;
-  CREATE: string;
-  DISPLAY_ONE: (id: string) => string;
-}
-
-interface WalletRoute {
-  DEPOSIT: string;
-  WITHDRAW: string;
-}
 
 interface AuthScreens {
   CHOOSE_ROLE: string;
@@ -33,11 +17,19 @@ interface AuthScreens {
   REGISTER: string;
 }
 
+interface FriendScreens{
+  LIST: string;
+  ADD: string;
+}
+
+interface ChatScreens{
+  MESSAGE:(params: {room_id:string, room_type:string}) => string;
+  NEW_MESSAGE:(params: {user_id:string}) => string;
+}
 const PAGE_ROUTES = {
   HOME_SCREEN: "/",
   LANDING_SCREEN: "/landing-page",
-  LOGGED_IN_SCREEN: "(main)/chats",
-  DASHBOARD: "/dashboard",
+  LOGGED_IN_SCREEN: "/chats",
   WELCOME_SCREEN: "/(auth)/welcome",
   AUTH_SCREENS: {
     LOGIN: "/(auth)/login",
@@ -49,25 +41,15 @@ const PAGE_ROUTES = {
     { route: "rules", icon: "rule", label: "Rules" },
     { route: "more", icon: "more", label: "More" },
   ] as TabScreen[],
-  COMP_SCREENS: {
-    SEE_MORE: (id: string) => "/competition/" + id + "/detail",
-    CREATE: "/competition/create",
-    DISPLAY_ONE: (id: string) => "/competition/" + id + "/list",
-  } as CompScreens,
-
-  MORESCREENS: [
-    { route: "/rules", icon: "rules.svg", label: "Rules" },
-    { route: "/profile", icon: "profile.svg", label: "Profile" },
-    {
-      route: "/suggestion-box",
-      icon: "box.svg",
-      label: "Suggestion Box",
-    },
-  ] as MoreScreen[],
-  WALLET_ROUTE: {
-    DEPOSIT: "/wallet/deposit",
-    WITHDRAW: "/wallet/withdrawal",
-  } as WalletRoute,
+  CONTACTS:{
+    LIST: "(main)/friends",
+    ADD: "(main)/friends/add",
+  } as FriendScreens,
+  CHAT:{
+    MESSAGE:({room_id, room_type}: {room_id:string, room_type:string})=> "(main)/chat/"+room_id+'?room_type='+room_type,
+    NEW_MESSAGE:({user_id}: {user_id:string})=> "(main)/chat/new"+user_id,
+  } as ChatScreens,
+  NEW_CHAT:"(main)/chat/new",
 };
 
 export default PAGE_ROUTES;

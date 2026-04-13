@@ -146,7 +146,7 @@ const AltePhone = forwardRef<PhoneInputRef, PhoneInputProps>(({
         onPress={() => setModalVisible(true)}
       >
         <CustomText style={{ fontSize: 20, marginRight: 4 }}>{selectedCountry.flag}</CustomText>
-        <CustomText style={{ fontSize: 14, fontWeight: '500', color: '#333' }}>
+        <CustomText style={{ fontSize: 14, color: '#333' }}>
           +{selectedCountry.callingCode}
         </CustomText>
         <Image 

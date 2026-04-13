@@ -29,14 +29,14 @@ export default function RootLayout() {
     }, 2000);
   }, []);
 
-  if (!ready) {
+  if (!ready || isAuthenticated === null) {
     return <CustomSplash />;
   }
 
   return (
   <MainLayout isAuthenticated={isAuthenticated}/>)
 }
-function MainLayout({isAuthenticated}: {isAuthenticated: boolean}) {
+function MainLayout({isAuthenticated}: {isAuthenticated: boolean | null}) {
   if(isAuthenticated){
     return <Redirect href={PAGE_ROUTES.LOGGED_IN_SCREEN as any} />
   }

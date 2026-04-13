@@ -4,7 +4,7 @@ import React, { createContext, ReactNode, useContext, useEffect, useState } from
  ;
 
 interface AuthContextType {
-  isAuthenticated: boolean;
+  isAuthenticated: boolean | null;
   login: (token: string) => Promise<void>;
   logout: () => Promise<void>;
   isLoading: boolean;
@@ -58,7 +58,7 @@ export default function AuthContextComponent({ children }: AuthContextComponentP
   return (
     <AuthContext.Provider
       value={{
-        isAuthenticated: !!user,
+        isAuthenticated: user?!!user:null,
         login,
         logout,
         isLoading

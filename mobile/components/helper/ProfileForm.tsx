@@ -50,15 +50,15 @@ export default function ProfileForm(
       body: {
         firstName: formData.firstName,
         formattedText:formData.formattedValue,
-        lastName: formData.lastName,
+      lastName: formData.lastName,
         phone: formData.phoneNumber,
         email: formData.email,
         ...(imageUrl ? {photoURL: imageUrl} : {}),
-        countryCode: formData.countryCode,
+      countryCode: formData.countryCode,
         countryName: formData.countryName,
         // take device info later
         // deviceId: DeviceInfo.getDeviceId(),
-        otp: otp
+        otp: formData.otp
       }
     });
   };
