@@ -8,7 +8,6 @@ export default async function register(req: Request, res: Response, next: NextFu
   try {
     const { body } = req;
     
-    // Verify OTP first
     if (!body.otp) {
       return res.status(400).json({ 
         error: { message: "OTP is required for registration" } 
@@ -33,8 +32,8 @@ export default async function register(req: Request, res: Response, next: NextFu
         error: { message: "Phone Already Exists" }
       });
     }
-
-    const user = new UserModel(req.body);
+    const countUsers=await UserModel.find({}).countDocuments()
+    const user = new UserModel({...req.body,index:countUsers});
     await user.save();
 
     const token = jwt.sign(

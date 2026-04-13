@@ -15,7 +15,7 @@ export default async function login(req: Request, res: Response, next: NextFunct
     }
 
     const redisKey = `${phone}OTP`;
-    consoleLog({redisKey})
+    // consoleLog({redisKey})
     const storedOtp = await redisService.readRd(redisKey);
 
     if (!storedOtp || storedOtp !== otp) {

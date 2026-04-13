@@ -1,3 +1,4 @@
+import { NextFunction } from 'express';
 import mongoose, { Document, Schema } from "mongoose";
 
 const SoundSchema = new Schema({
@@ -33,6 +34,7 @@ export interface IUser extends Document {
     nickVoice?: string;
   };
   deviceInfo?: Array<Record<string, any>>;
+  index?: number;
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -86,11 +88,16 @@ const UserSchema = new Schema<IUser>(
       type: [Schema.Types.Mixed],
       required: false,
     },
+    index: {
+      type: Number,
+      required: false,
+    },
   },
   {
     timestamps: true,
   }
 );
+
 
 const UserModel = mongoose.model<IUser>("User", UserSchema);
 

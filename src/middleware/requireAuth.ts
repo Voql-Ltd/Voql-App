@@ -1,9 +1,9 @@
 import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import checkUserAccountStatus from '../utils/checkUserAccountStatus';
 import UserModel from '../model/User';
+import checkUserAccountStatus from '../utils/checkUserAccountStatus';
 
-interface AuthenticatedRequest extends Request {
+export interface AuthenticatedRequest extends Request {
   user?: any;
 }
 
