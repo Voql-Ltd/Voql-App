@@ -7,7 +7,6 @@ import React, {useCallback, useMemo, useState} from "react";
 import {
   FlatList,
   Modal,
-  CustomText,
   TextInput,
   TouchableOpacity,
   View,
@@ -18,6 +17,7 @@ import type {ClassValue} from "clsx";
 import type {StyleProp, TextStyle, ViewStyle} from "react-native";
 import { mergeClasses } from "@/config";
 import { countries, searchCountries, sortCountriesByName } from "@/config/countries";
+import CustomText from "./CustomText";
 
 export type CountryCode = string;
 export type CallingCode = string;
