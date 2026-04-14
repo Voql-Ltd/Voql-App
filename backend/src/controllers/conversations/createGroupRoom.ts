@@ -1,6 +1,6 @@
 import { NextFunction, Response } from 'express';
 import { AuthenticatedRequest } from '../../middleware/requireAuth';
-import RoomModel from '../../model/Room';
+import ConversationModel from '../../model/Conversation';
 
 export default async function createGroupRoom(req: AuthenticatedRequest, res: Response, next: NextFunction) {
   try {
@@ -11,7 +11,7 @@ export default async function createGroupRoom(req: AuthenticatedRequest, res: Re
       members.push(userId);
     }
 
-    const room = new RoomModel({
+    const room = new ConversationModel({
       name,
       members,
       roomType: 'group'

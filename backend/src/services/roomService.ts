@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-import RoomModel from '../model/Room';
-import UserModel from '../model/User';
+import ConversationModel from '../model/Conversation';
 import MessageModel from '../model/Message';
+import UserModel from '../model/User';
 import SocketService from './socketService';
 
 export interface InitiateConversationParams {
@@ -51,7 +51,7 @@ export class RoomService {
       : `${recipientIndex}-${userIndex}`;
 
     // Check if room already exists
-    const existingRoom = await RoomModel.findOne({
+    const existingRoom = await ConversationModel.findOne({
       roomType: 'p2p',
       name: roomName
     });
@@ -70,7 +70,7 @@ export class RoomService {
     }
 
     // Create new P2P room
-    const room = new RoomModel({
+    const room = new ConversationModel({
       name: roomName,
       members: [userId, recipientId],
       roomType: 'p2p'
@@ -116,7 +116,7 @@ export class RoomService {
     const { roomId, senderId, content } = params;
 
     // Validate room exists
-    const room = await RoomModel.findById(roomId);
+    const room = await ConversationModel.findById(roomId);
     if (!room) {
       throw new Error('Room not found');
     }
@@ -185,7 +185,7 @@ export class RoomService {
    * Gets all rooms for a user
    */
   async getUserRooms(userId: string) {
-    const rooms = await RoomModel.find({ members: userId })
+    const rooms = await ConversationModel.find({ members: userId })
       .populate('members', 'firstName lastName formattedText _id')
       .sort({ updatedAt: -1 });
 

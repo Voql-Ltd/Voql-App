@@ -1,6 +1,6 @@
 import { NextFunction, Response } from 'express';
 import { AuthenticatedRequest } from '../../middleware/requireAuth';
-import RoomModel from '../../model/Room';
+import ConversationModel from '../../model/Conversation';
 import UserModel from '../../model/User';
 
 export default async function addMemberToRoom(req: AuthenticatedRequest, res: Response, next: NextFunction) {
@@ -15,7 +15,7 @@ export default async function addMemberToRoom(req: AuthenticatedRequest, res: Re
       });
     }
 
-    const room = await RoomModel.findByIdAndUpdate(
+    const room = await ConversationModel.findByIdAndUpdate(
       roomId,
       { $addToSet: { members: userId } },
       { new: true }

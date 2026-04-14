@@ -1,6 +1,6 @@
 import { NextFunction, Response } from 'express';
 import { AuthenticatedRequest } from '../../middleware/requireAuth';
-import RoomModel from '../../model/Room';
+import ConversationModel from '../../model/Conversation';
 import UserModel from '../../model/User';
 
 export default async function createP2PRoom(req: AuthenticatedRequest, res: Response, next: NextFunction) {
@@ -17,7 +17,7 @@ export default async function createP2PRoom(req: AuthenticatedRequest, res: Resp
     }
     const roomName= userIndex> recipientIndex ? `${userIndex}-${recipientIndex}` : `${recipientIndex}-${userIndex}`;
     
-    const existingRoom = await RoomModel.findOne({
+    const existingRoom = await ConversationModel.findOne({
       roomType: 'p2p',
       name: roomName
     });
@@ -29,7 +29,7 @@ export default async function createP2PRoom(req: AuthenticatedRequest, res: Resp
       });
     }
 
-    const room = new RoomModel({
+    const room = new ConversationModel({
       name: roomName,
       members: [userId, recipientId],
       roomType: 'p2p'
