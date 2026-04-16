@@ -1,12 +1,12 @@
 import { NextFunction, Response } from 'express';
 import { AuthenticatedRequest } from '../../middleware/requireAuth';
-import RoomModel from '../../model/Room';
+import ConversationModel from '../../model/Conversation';
 
 export default async function getGroupsByUser(req: AuthenticatedRequest, res: Response, next: NextFunction) {
   try {
     const userId = req.user.id;
 
-    const rooms = await RoomModel.find({
+    const rooms = await ConversationModel.find({
       members: userId,
       roomType: 'group'
     }).populate('members', 'firstName lastName formattedText _id');

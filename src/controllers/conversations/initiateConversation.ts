@@ -1,6 +1,6 @@
 import { NextFunction, Response } from 'express';
 import { AuthenticatedRequest } from '../../middleware/requireAuth';
-import RoomModel from '../../model/Room';
+import ConversationModel from '../../model/Conversation';
 import UserModel from '../../model/User';
 
 export default async function initiateConversation(req: AuthenticatedRequest, res: Response, next: NextFunction) {
@@ -18,13 +18,13 @@ export default async function initiateConversation(req: AuthenticatedRequest, re
       });
     }
 
-    let room = await RoomModel.findOne({
+    let room = await ConversationModel.findOne({
       roomType: 'p2p',
       members: { $all: [userId, recipientId], $size: 2 }
     });
 
     if (!room) {
-      room = new RoomModel({
+      room = new ConversationModel({
         name: `${user.firstName} & ${recipient.firstName}`,
         members: [userId, recipientId],
         roomType: 'p2p'

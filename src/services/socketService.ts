@@ -3,9 +3,9 @@ import jwt from 'jsonwebtoken';
 import { Types } from 'mongoose';
 import { Socket, Server as SocketIOServer } from 'socket.io';
 import config from '../configs/constants';
+import ConversationModel from '../model/Conversation';
 import MessageModel from '../model/Message';
-import RoomModel from '../model/Room';
-import UserConversationModel from '../model/Conversation';
+import UserConversationModel from '../model/UserConversation';
 
 interface AuthenticatedSocket extends Socket {
   userId: string;
@@ -92,7 +92,7 @@ export class SocketService {
 
   private async joinUserToRooms(socket: AuthenticatedSocket) {
     try {
-      const rooms = await RoomModel.find({ members: socket.userId });
+      const rooms = await ConversationModel.find({ members: socket.userId });
       rooms.forEach(room => {
         socket.join(room._id.toString());
       });
@@ -173,7 +173,7 @@ export class SocketService {
     try {
       // Create a P2P room for the two members
       const roomName = `${sender}_${recipient}`;
-      const newRoom = new RoomModel({
+      const newRoom = new ConversationModel({
         name: roomName,
         members: [sender, recipient],
         roomType: 'p2p'

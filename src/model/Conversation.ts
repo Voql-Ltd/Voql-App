@@ -1,47 +1,37 @@
 import mongoose, { Document, Schema, Types } from 'mongoose';
 
-export interface IUserConversation extends Document {
-  user: Types.ObjectId;
-  lastMessage: Types.ObjectId | null;
-  room:Types.ObjectId
-  unreadCount: number;
-  createdAt?: Date;
-  updatedAt?: Date;
+export interface IConversation extends Document {
+  name: string;
+  members: Types.ObjectId[];
+  roomType: 'p2p' | 'group' | 'broadcast';
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-const UserConversationSchema = new Schema<IUserConversation>(
-  {
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: 'User',
-      required: true,
-    },
-    lastMessage: {
-      type: Schema.Types.ObjectId,
-      ref: 'Message',
-      default: null,
-    },
-    room: {
-      type: Schema.Types.ObjectId,
-      ref: 'Room',
-      default: null,
-    },
-    
-    unreadCount: {
-      type: Number,
-      default: 0,
-      min: 0,
-    },
+const ConversationSchema = new Schema<IConversation>({
+  name: {
+    type: String,
+    required: true,
+    unique: true
   },
-  {
-    timestamps: true,
+  members: [{
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  }],
+  roomType: {
+    type: String,
+    enum: ['p2p', 'group', 'broadcast'],
+    required: true
   }
-);
+}, {
+  timestamps: true
+});
 
-// Index for efficient queries
-UserConversationSchema.index({ user: 1 });
-UserConversationSchema.index({ user: 1, updatedAt: -1 });
+// Index for efficient room lookups
+ConversationSchema.index({ name: 1 }, { unique: true });
+ConversationSchema.index({ members: 1 });
 
-const UserConversationModel = mongoose.model<IUserConversation>("UserConversation", UserConversationSchema);
+const ConversationModel = mongoose.model<IConversation>("Conversation", ConversationSchema);
 
-export default UserConversationModel;
+export default ConversationModel;
