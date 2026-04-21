@@ -5,7 +5,7 @@ import FriendModel from '../../model/Friend';
 export const acceptFriendRequest = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
   try {
     const { requestId } = req.body;
-    const userId = req.user.id;
+    const userId = req.user._id;
 
     if (!requestId) {
       return res.status(400).json({ error: 'Request ID is required' });

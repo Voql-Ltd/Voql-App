@@ -45,7 +45,7 @@ export default async function login(req: Request, res: Response, next: NextFunct
         message: "Logged in successfully",
         data:{
             access_token:token,
-            user
+            userId:user._id
         }
     });
 

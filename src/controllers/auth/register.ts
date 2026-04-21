@@ -51,7 +51,7 @@ export default async function register(req: Request, res: Response, next: NextFu
       .json({ 
         status: "success", 
         message: "Account created", 
-        data: { access_code: token } 
+        data: { access_token: token, userId: user._id } 
       });
   } catch (error) {
     console.log({ error });

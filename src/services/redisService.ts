@@ -1,10 +1,10 @@
 import redisClient from '../configs/redis';
 
-const setRd = async (key: string, value: string | any[], ttl?: number): Promise<void> => {
+const setRd = async (key: string, value: string | any | Buffer, ttl?: number): Promise<void> => {
   try {
     const stringValue = Array.isArray(value) ? JSON.stringify(value) : value;
     if (ttl) {
-      await redisClient.setEx(key, ttl, stringValue);
+      await redisClient.setex(key, ttl, stringValue);
     } else {
       await redisClient.set(key, stringValue);
     }
@@ -23,16 +23,55 @@ const readRd = async (key: string): Promise<string | null> => {
   }
 };
 
+const readBufferRd = async (key: string): Promise<Buffer | null> => {
+  try {
+    const result = await redisClient.getBuffer(key);
+    return result;
+  } catch (error) {
+    console.error('Redis read error:', error);
+    throw error;
+  }
+};
+
+const getAllMatchingKeys = async (pattern: string): Promise<string[]> => {
+  try {
+    const keys = await redisClient.keys(pattern);
+    return keys;
+  } catch (error) {
+    console.error('Redis keys error:', error);
+    throw error;
+  }
+};
+
+const getAllMatchingValues = async (pattern: string): Promise<{key: string, value: string}[]> => {
+  try {
+    const keys = await redisClient.keys(pattern);
+    const results = [];
+    
+    for (const key of keys) {
+      const value = await redisClient.get(key);
+      if (value) {
+        results.push({ key, value });
+      }
+    }
+    
+    return results;
+  } catch (error) {
+    console.error('Redis pattern matching error:', error);
+    throw error;
+  }
+};
+
 const modifyRd = async (key: string, value: string | any[], ttl?: number): Promise<void> => {
   try {
     const exists = await redisClient.exists(key);
-    if (exists === 0) {
+    if (!exists) {
       throw new Error(`Key '${key}' does not exist`);
     }
     
     const stringValue = Array.isArray(value) ? JSON.stringify(value) : value;
     if (ttl) {
-      await redisClient.setEx(key, ttl, stringValue);
+      await redisClient.setex(key, ttl, stringValue);
     } else {
       await redisClient.set(key, stringValue);
     }
@@ -54,8 +93,11 @@ const delRd = async (key: string): Promise<number> => {
 export const redisService = {
   setRd,
   readRd,
+  readBufferRd,
   modifyRd,
-  delRd
+  delRd,
+  getAllMatchingKeys,
+  getAllMatchingValues
 };
 
 export default redisService;

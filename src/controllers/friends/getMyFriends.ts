@@ -4,7 +4,7 @@ import FriendModel from '../../model/Friend';
 
 export const getMyFriends = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
   try {
-    const userId = req.user.id;
+    const userId = req.user._id;
 
     const friends = await FriendModel.find({
       $or: [

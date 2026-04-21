@@ -5,7 +5,7 @@ import UserModel from '../../model/User';
 
 export default async function createP2PRoom(req: AuthenticatedRequest, res: Response, next: NextFunction) {
   try {
-    const {_id:userId, index:userIndex} = req.user.id;
+    const {_id:userId, index:userIndex} = req.user._id;
     const { recipientId, recipientIndex} = req.body;
 
     const recipient = await UserModel.findById(recipientId);
@@ -15,17 +15,18 @@ export default async function createP2PRoom(req: AuthenticatedRequest, res: Resp
         message: 'Recipient not found'
       });
     }
-    const roomName= userIndex> recipientIndex ? `${userIndex}-${recipientIndex}` : `${recipientIndex}-${userIndex}`;
+    const roomName= userIndex < recipientIndex ? `p2p:${userId}-${recipientId}` : `p2p:${recipientId}-${userId}`;
     
     const existingRoom = await ConversationModel.findOne({
       roomType: 'p2p',
       name: roomName
-    });
+    })
 
     if (existingRoom) {
-      return res.status(400).json({
-        status: 'error',
-        message: 'P2P room already exists'
+      return res.status(201).json({
+        status: 'success',
+        message: 'P2P room created',
+        data: existingRoom
       });
     }
 
@@ -36,7 +37,7 @@ export default async function createP2PRoom(req: AuthenticatedRequest, res: Resp
     });
 
     await room.save();
-    await room.populate('members', 'firstName lastName formattedText _id');
+    // await room.populate('members', 'firstName lastName formattedText _id');
 
     res.status(201).json({
       status: 'success',

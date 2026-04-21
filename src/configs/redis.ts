@@ -1,8 +1,6 @@
-import { createClient } from 'redis';
+import Redis from 'ioredis';
 
-const redisClient = createClient({
-  url: process.env.REDIS_PUBLIC_URL as string
-});
+const redisClient = new Redis(process.env.REDIS_PUBLIC_URL as string);
 
 redisClient.on('error', (err: Error) => {
   console.error('Redis error:', err);
@@ -12,9 +10,9 @@ redisClient.on('connect', () => {
   console.log('✅ Redis connected');
 });
 
-
 export const connectRedis = async (): Promise<void> => {
-  if (!redisClient.isOpen) {
+  // ioredis connects automatically, but we can ensure connection
+  if (redisClient.status !== 'ready') {
     await redisClient.connect();
   }
 };

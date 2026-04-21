@@ -5,7 +5,7 @@ import UserModel from '../../model/User';
   
 export const getPeopleYouMayKnow = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
   try {
-    const userId = req.user.id;
+    const userId = req.user._id;
     const { phoneNumbers } = req.body;
 
     if (!userId) {

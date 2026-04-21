@@ -4,7 +4,7 @@ import ConversationModel from '../../model/Conversation';
 
 export default async function createGroupRoom(req: AuthenticatedRequest, res: Response, next: NextFunction) {
   try {
-    const userId = req.user.id;
+    const userId = req.user._id;
     const { name, members } = req.body;
 
     if (!members.includes(userId)) {

@@ -5,7 +5,7 @@ import UserModel from '../../model/User';
 
 export default async function initiateConversation(req: AuthenticatedRequest, res: Response, next: NextFunction) {
   try {
-    const userId = req.user.id;
+    const userId = req.user._id;
     const { recipientId } = req.body;
 
     const user = await UserModel.findById(userId);

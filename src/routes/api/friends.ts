@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { acceptFriendRequest } from '../../controllers/friends/acceptRequest';
+import createP2PRoom from '../../controllers/conversations/createP2PRoom';
 import { findUsersByContacts } from '../../controllers/friends/findUsersByContacts';
 import { getMyFriends } from '../../controllers/friends/getMyFriends';
 import { getPeopleYouMayKnow } from '../../controllers/friends/getSuggestions';
@@ -7,10 +8,11 @@ import { sendFriendRequest } from '../../controllers/friends/sendRequest';
 import requireAuth from '../../middleware/requireAuth';
 import {
     acceptFriendRequestSchema,
+    createP2PRoomSchema,
     findUsersByContactsSchema,
     getSuggestionsSchema,
     sendFriendRequestSchema
-} from '../../middleware/validators/friend';
+} from '../../middleware/validators/contact';
 import { validate } from '../../middleware/validators/auth';
 
 const router = Router();
@@ -24,5 +26,7 @@ router.get('/', requireAuth, getMyFriends);
 router.post('/find-by-contacts', requireAuth, validate(findUsersByContactsSchema), findUsersByContacts);
 
 router.get('/suggestions', requireAuth, validate(getSuggestionsSchema), getPeopleYouMayKnow);
+
+router.post('/create-p2p-room', requireAuth, validate(createP2PRoomSchema), createP2PRoom);
 
 export default router;

@@ -6,6 +6,8 @@ import config from '../configs/constants';
 import ConversationModel from '../model/Conversation';
 import MessageModel from '../model/Message';
 import UserConversationModel from '../model/UserConversation';
+import redisService from './redisService';
+import consoleLog from '../utils/consolelog';
 
 interface AuthenticatedSocket extends Socket {
   userId: string;
@@ -66,6 +68,24 @@ export class SocketService {
       socket.on('join-room', (roomId: string) => {
         socket.join(roomId);
         console.log(`User ${authenticatedSocket.userId} joined room ${roomId}`);
+      });
+
+      socket.on('audio_chunk', async ({ chunk, channel_info }) => {
+        consoleLog('received audio chunk on backend')
+        let fileName = `chunk_${Date.now()}`;
+        fileName=`${channel_info.room_id}_${fileName}_${channel_info.user_id}_${channel_info.user_name}`
+        
+        const base64Data = chunk.data.replace(/^data:audio\/\w+;base64,/, '');
+        
+        // store temporarily - expire in 20 minutes (just enough for delivery)
+        await redisService.setRd(
+          fileName,
+          base64Data,
+          60 * 20
+        );
+
+        this.io.emit('new_chunk', { filename: fileName, timestamp: chunk.timestamp });
+        // this.io.to(channel_info.room_id).emit('new_chunk', { filename, timestamp: chunk.timestamp });
       });
 
       // Handle leaving a room
