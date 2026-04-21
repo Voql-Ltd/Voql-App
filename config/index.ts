@@ -11,7 +11,7 @@ export { default as API_ROUTES } from './apiRoutes';
 export { default as PAGE_ROUTES } from './pageRoutes';
 
 export { commafy, kFormatter, mergeClasses } from './extra';
-
+export { getDayMonth, getTime, isSameDay, isWithinTwoDays, getRelativeTime } from './momentService';
 export { countries, getCountryByCallingCode, getCountriesByRegion, sortCountriesByName, searchCountries, getCountryByCode } from './countries';
 
 // export {default as kFormatter} from './kFormatter';

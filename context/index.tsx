@@ -9,4 +9,6 @@ export {
   RegisterContext,
 } from "./useRegisterContext";
 
+export { default as ConversationContextComponent, ConversationContext } from "./useConversationContext";
+
 

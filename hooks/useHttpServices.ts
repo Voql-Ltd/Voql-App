@@ -70,6 +70,7 @@ export const useHttpServices = ({
     consolelog({path})
     let token = await getItemInSession({key: 'access_token'})
     // consolelog({token,body})
+    token = token?.split('=')[1];
     const headers={
       authorization: `Bearer ${userType==="vendor"?token:token}`,
     }
@@ -91,6 +92,7 @@ export const useHttpServices = ({
   const putProtectedData = async ({path, body = {}, userType}: ProtectedHttpServiceParams) => {
     let token = await getItemInSession({key: 'access_token'})
     consolelog({path, token})
+    token = token?.split('=')[1];
 
     const headers={
       authorization: `Bearer ${userType==="vendor"?token:token}`,
@@ -113,6 +115,7 @@ export const useHttpServices = ({
   const patchProtectedData = async ({path, body = {}, userType}: ProtectedHttpServiceParams) => {
     consolelog({path})
     let token = await getItemInSession({key: 'access_token'})
+    token = token?.split('=')[1];
 
     const headers={
       authorization: `Bearer ${userType==="vendor"?token:token}`,
@@ -133,7 +136,8 @@ export const useHttpServices = ({
   const deleteProtectedData = async ({path, body = {}, userType}: ProtectedHttpServiceParams) => {
     consolelog({path})
     let token = await getItemInSession({key: 'access_token'})
-
+    token = token?.split('=')[1];
+  
     const headers={
       authorization: `Bearer ${userType==="vendor"?token:token}`,
     }
@@ -153,6 +157,7 @@ export const useHttpServices = ({
   const getProtectedData = async ({path, userType}: {path: string; userType?: string}) => {
     consolelog({path})
     let token = await getItemInSession({key: 'access_token'})
+    token = token?.split('=')[1];
 
     try {
       setLoading(true);

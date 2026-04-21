@@ -6,7 +6,7 @@ import { ActivityIndicator, StatusBar, Text, useColorScheme, View } from 'react-
 // import { CustomSplash } from "./components";
 import '../styles/global.css';
 import { useAuth } from "@/context";
-import { PAGE_ROUTES } from "@/config";
+import { consolelog, PAGE_ROUTES } from "@/config";
 import { GuestRedirect } from "@/components";
 
 // import GuestRedirect from '../src/components/helper/GuestRedirect';
@@ -28,11 +28,11 @@ export default function RootLayout() {
       await SplashScreen.hideAsync();
     }, 2000);
   }, []);
-
+  consolelog({isAuthenticated})
   if (!ready || isAuthenticated === null) {
     return <CustomSplash />;
   }
-
+  
   return (
   <MainLayout isAuthenticated={isAuthenticated}/>)
 }

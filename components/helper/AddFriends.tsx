@@ -5,6 +5,7 @@ import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from "reac
 import CustomText from "./CustomText";
 import SearchButtonHelper from "./SearchButtonHelper";
 
+// not using
 export default function AddFriends({onNext}: {onNext: () => void}){
     const [contactKey, setContactKey]= useState('')
 

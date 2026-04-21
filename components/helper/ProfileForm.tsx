@@ -50,11 +50,11 @@ export default function ProfileForm(
       body: {
         firstName: formData.firstName,
         formattedText:formData.formattedValue,
-      lastName: formData.lastName,
+        lastName: formData.lastName,
         phone: formData.phoneNumber,
         email: formData.email,
-        ...(imageUrl ? {photoURL: imageUrl} : {}),
-      countryCode: formData.countryCode,
+        ...(imageUrl ? {imageUrl} : {}),
+        countryCode: formData.countryCode,
         countryName: formData.countryName,
         // take device info later
         // deviceId: DeviceInfo.getDeviceId(),
@@ -71,7 +71,7 @@ export default function ProfileForm(
       onSuccess: async(data:any) => {  
         NotifySuccess('Account created successfully')
         consolelog({sreg:data})
-        await login(data?.data?.access_code);
+        await login(data?.data?.access_token, data?.data?.userId);
         return onNext();
       }
   })

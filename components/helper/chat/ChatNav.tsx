@@ -3,9 +3,10 @@
  * Center title with left/right action buttons
  */
 
-import {Feather, Ionicons, MaterialIcons} from "@expo/vector-icons";
-import {Text, TouchableOpacity, View} from "react-native";
+import {Ionicons, MaterialIcons} from "@expo/vector-icons";
+import {TouchableOpacity, View} from "react-native";
 import SearchButtonHelper from "../SearchButtonHelper";
+import CustomText from "../CustomText";
 
 /**
  *
@@ -43,7 +44,7 @@ export default function ChatNav({
             className="text-neutral-700"
           />
         </TouchableOpacity>
-        <Text className="text-2xl text-neutral-900">Chats</Text>
+        <CustomText className="text-2xl text-neutral-900">Chats</CustomText>
 
         <View className="flex-row gap-x-3 items-center" style={{gap: 5}}>
           {/* <TouchableOpacity

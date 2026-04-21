@@ -1,9 +1,9 @@
-import { CustomText, DataFetchContainer, GoBack, SearchButtonHelper } from "@/components";
+import { CustomText, DataFetchContainer, FixedHeight, GoBack, LoadButton, SearchButtonHelper } from "@/components";
 import { consolelog, PAGE_ROUTES } from "@/config";
 import API_ROUTES from '@/config/apiRoutes';
-import { useHttpServices } from '@/hooks';
+import { useHttpServices, useToast } from '@/hooks';
 import { AntDesign, Ionicons, MaterialIcons } from "@expo/vector-icons";
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import * as Contacts from 'expo-contacts';
 import { useRouter } from "expo-router";
 import { useEffect, useState } from 'react';
@@ -22,6 +22,7 @@ export default function AddFriends() {
   const { getProtectedData, postProtectedData } = useHttpServices();
   const [contactsPermission, setContactsPermission] = useState<'granted' | 'denied' | 'loading'>('loading');
   const router= useRouter()
+  const {NotifyError, NotifySuccess}=useToast()
 
   useEffect(() => {
     checkContactsPermission();
@@ -65,6 +66,27 @@ export default function AddFriends() {
     enabled: contactsPermission === 'granted',
   });
 
+  const { mutate: createP2PRoom, isPending: createRoomLoading } = useMutation({
+    mutationFn: async ({_id, name, imageUrl}: {_id:string, name:string, imageUrl?:string}) => {
+      return await postProtectedData({
+        path: API_ROUTES.CREATE_P2P_ROOM,
+        body: { recipientId: _id},
+      });
+    },
+    onSuccess: (response, {name, _id, imageUrl}) => {
+      const room_id = response?.data?._id;
+      if (room_id) {
+        const roomData=JSON.stringify({ name, room_type: 'p2p', room_bio:'', room_image:imageUrl, user_id:_id})
+        return router.push(PAGE_ROUTES.CHAT.MESSAGE({room_id,roomData}) as any);
+      }
+    },
+    onError:({error}: {error: any}) => {
+      console.log(error);
+      NotifyError(error?.message)
+      return
+    }
+  });
+
   const openSettings = () => {
     Linking.openSettings();
   };
@@ -80,14 +102,24 @@ export default function AddFriends() {
         <CustomText className="text-lg font-semibold">{item.firstName+' '+item.lastName}</CustomText>
         <CustomText className="text-gray-500">{item.formattedText}</CustomText>
       </View>
-      <TouchableOpacity onPress={()=>router.push(PAGE_ROUTES.CHAT.NEW_MESSAGE({user_id: item._id as string}) as any)} className="bgblue-custom px-4 py-2 rounded-full">
-        <CustomText className="text-white text-sm">Message</CustomText>
-      </TouchableOpacity>
+      <LoadButton
+        removeDefaultDisabledLabelStyle={true}
+        onPress={() => createP2PRoom(
+          {_id:item._id, name:item.firstName+' '+item.lastName, imageUrl:item.imageUrl},
+
+        )}
+        disabled={createRoomLoading}
+        className="bgblue-custom px-5 py-2 rounded-full"
+      >
+        <CustomText className="text-white text-[14px]">Message</CustomText>
+      </LoadButton>
     </View>
   );
 
   const renderHeader = () => (
-    <View className="gap-y-6 w-full mb-4">
+    <View className="gap-y-6 w-full mb-4"
+     style={{paddingHorizontal: 16 }}
+    >
       {['New group', 'New Contact'].map((x_label,ind)=>
         <TouchableOpacity key={ind} onPress={()=>{}} className='w-full flex-row gap-x-3 items-center'>
           <View style={{borderRadius:50}} className="rounded-full p-1.5 border border-gray-400 ">
@@ -158,47 +190,51 @@ export default function AddFriends() {
   
   return (
     <SafeAreaView>
-       <View className='relative'>
-        <View className="h-[130px] pt-5 gap-y-6 absolute top-0 left-0 right-0">
-            <GoBack label="Add Friends"   
-                // route={()=>router.back()}
-                showLabel={true} extraComponent={
-                <TouchableOpacity onPress={() => console.log('Add pressed')}>
-                    <Ionicons name="ellipsis-vertical" size={24} color="black" />
-                </TouchableOpacity>
-            }/>
-            <View className="px-1">
-              <SearchButtonHelper showBtn={false} keyword={keyword} label="Search Contacts" setKeyword={setKeyword} />
+       <FixedHeight
+          fixedChildren={
+            <View className="pt-5 gap-y-6 absolute top-0 left-0 right-0">
+              <GoBack label="Add Friends"   
+                  // route={()=>router.back()}
+                  showLabel={true} extraComponent={
+                  <TouchableOpacity onPress={() => console.log('Add pressed')}>
+                      <Ionicons name="ellipsis-vertical" size={24} color="black" />
+                  </TouchableOpacity>
+              }/>
+              <View className="px-1">
+                <SearchButtonHelper showBtn={false} keyword={keyword} label="Search Contacts" setKeyword={setKeyword} />
+              </View>
             </View>
-        </View>
-        <View style={{ paddingTop: 150, paddingHorizontal: 16 }}>
-          <DataFetchContainer
-              isLoading={isLoading}
-              isError={isError}
-              isEmpty={contactsData?.data?.users.length === 0}
-              emptyComponent={
-                  <View className="flex-1 items-center justify-center p-6">
-                  <CustomText className="text-center text-lg mb-4">
-                      No Contacts Found
-                  </CustomText>
-                  <CustomText className="text-center text-gray-600">
-                      Try inviting friends directly or check your contacts access.
-                  </CustomText>
-                  </View>
-              }
-              errorMsg="Failed to load contacts"
-          >
-              <FlatList
-                  data={contactsData?.data?.users || []}
-                  renderItem={renderUserItem}
-                  keyExtractor={(item: any, index: number) => index.toString()}
-                  showsVerticalScrollIndicator={false}
-                  ListHeaderComponent={renderHeader}
-                  
-              />
-          </DataFetchContainer>
-        </View>
-      </View>
+          }
+          afterChildren={
+            <View>
+              <DataFetchContainer
+                  isLoading={isLoading}
+                  isError={isError}
+                  isEmpty={contactsData?.data?.users.length === 0}
+                  emptyComponent={
+                      <View className="flex-1 items-center justify-center p-6">
+                      <CustomText className="text-center text-lg mb-4">
+                          No Contacts Found
+                      </CustomText>
+                      <CustomText className="text-center text-gray-600">
+                          Try inviting friends directly or check your contacts access.
+                      </CustomText>
+                      </View>
+                  }
+                  errorMsg="Failed to load contacts"
+              >
+                  <FlatList
+                      data={contactsData?.data?.users || []}
+                      renderItem={renderUserItem}
+                      keyExtractor={(item: any, index: number) => index.toString()}
+                      showsVerticalScrollIndicator={false}
+                      ListHeaderComponent={renderHeader}
+                      
+                  />
+              </DataFetchContainer>
+            </View>
+          }
+       />
     </SafeAreaView>
   );
 }

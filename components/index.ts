@@ -1,5 +1,9 @@
 // import PhoneInput from "./helper/PhoneNumberInput/PhoneNumberInput";
 
+export {default as MicPlay} from "./helper/chat/MicPlay";
+
+export { default as FixedHeight } from "./helper/FixedHeight";
+
 export {default as DataFetchContainer} from "./helper/DataFetchContainer";
 
 export { default as AddFriends } from "./helper/AddFriends";

@@ -23,7 +23,7 @@ interface FriendScreens{
 }
 
 interface ChatScreens{
-  MESSAGE:(params: {room_id:string, room_type:string}) => string;
+  MESSAGE:(params: {room_id:string, roomData:string}) => string;
   NEW_MESSAGE:(params: {user_id:string}) => string;
 }
 const PAGE_ROUTES = {
@@ -46,7 +46,7 @@ const PAGE_ROUTES = {
     ADD: "(main)/friends/add",
   } as FriendScreens,
   CHAT:{
-    MESSAGE:({room_id, room_type}: {room_id:string, room_type:string})=> "(main)/chat/"+room_id+'?room_type='+room_type,
+    MESSAGE:({room_id, roomData}: {room_id:string, roomData:string})=> "(main)/chat/"+room_id+'?roomData='+roomData,
     NEW_MESSAGE:({user_id}: {user_id:string})=> "(main)/chat/new"+user_id,
   } as ChatScreens,
   NEW_CHAT:"(main)/chat/new",

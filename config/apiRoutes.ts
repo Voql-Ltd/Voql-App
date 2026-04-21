@@ -17,12 +17,16 @@ const API_ROUTES = {
   
   //CONVERSATIONS
   GET_CONVERSATIONS:'conversations/all',
+  GET_CONVERSATION_BY_ROOMID:(room_id:string, room_type?:string)=>`conversations/one/${room_id}${room_type ?`?room_type=${room_type}` : ''}`,
 
   //ROOMS
-  CREATE_P2P_ROOM:'rooms/create-p2p',
-  CREATE_GROUP_ROOM:'rooms/create-group',
-  GET_ROOM_BY_NAME:'rooms/:roomName',
-  INITIATE_CONVO:'rooms/initiate-convo'
+  CREATE_P2P_ROOM:'conversations/create-p2p',
+  CREATE_GROUP_ROOM:'conversations/create-group',
+  GET_ROOM_BY_NAME:()=>'conversations/:roomName',
+  INITIATE_CONVO:'conversations/initiate-convo',
+
+  //MESSAGES
+  GET_MESSAGES:(room_id:string)=>`messages/${room_id}`,
 };
 
 export default API_ROUTES

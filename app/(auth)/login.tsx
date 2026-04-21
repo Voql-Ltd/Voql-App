@@ -190,7 +190,7 @@ function Step2VerifyPhone({
             // consolelog({sreg:data})
       setHasVerified(true);
       setOtp('')
-      await login(data?.data?.access_token);
+      await login(data?.data?.access_token, data?.data?.userId);
       NotifySuccess('Login successful');
       router.push(PAGE_ROUTES.LOGGED_IN_SCREEN as any);
       return

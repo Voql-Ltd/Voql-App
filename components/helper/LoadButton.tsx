@@ -8,6 +8,7 @@ interface LoadButtonProps {
   isLoading?: boolean;
   loadingLabel?: string;
   buttonStyle?: any;
+  removeDefaultDisabledLabelStyle?:boolean;
   loadingComponent?: ReactNode;
   textStyle?: any;
   className?: string;
@@ -18,6 +19,7 @@ export default function LoadButton({
   onPress,
   disabled = false,
   isLoading = false,
+  removeDefaultDisabledLabelStyle = false,
   loadingLabel,
   buttonStyle={backgroundColor: '#1194FF'},
   loadingComponent = null,
@@ -33,7 +35,7 @@ export default function LoadButton({
       style={[
         styles.button, 
         buttonStyle, 
-        {opacity: disabled || isLoading ? 0.6 : 1}
+        {opacity: removeDefaultDisabledLabelStyle? 1 : (disabled || isLoading ? 0.6 : 1)}
       ]}
       activeOpacity={0.6}
     >

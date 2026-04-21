@@ -14,20 +14,20 @@ export default function ChatsScreen() {
   const getRecentConvos=async()=>{
     return await getProtectedData({path:API_ROUTES.GET_CONVERSATIONS})
   }
-  const { data: convo_data, isLoading, isError } = useQuery({
+  const { data: convo_data, isLoading, isError, error } = useQuery({
     queryKey: ['conversations'],
     queryFn: getRecentConvos
   });
-
+  console.log({convo:convo_data})
   const {isChatsEmpty, headerHeights} = useMemo(()=>{ 
-    const isChatsLen=!convo_data || convo_data?.conversations?.length === 0;
+    const isChatsLen=!convo_data || convo_data?.data?.length === 0;
     const headerHeight = isChatsLen ? 200 : 140;
     return {isChatsEmpty: isChatsLen, headerHeights: headerHeight};
   },[convo_data])
   // !conversations || conversations.length === 0;
   const [searchQuery, setSearchQuery] = useState('');
   return(
-    <SafeAreaView style={{height:headerHeights}} className='flex-1 bg-white relative'>
+    <SafeAreaView style={{height:headerHeights}} className='flex-1 bg-white mt-6 relative'>
       <ChatNav 
         onOpenOverflow={() => {}}
         onInviteFriends={() => router.push(PAGE_ROUTES.CONTACTS.ADD as any)}
@@ -48,7 +48,7 @@ export default function ChatsScreen() {
             }  
             errorMsg="Failed to load recent conversations"
         >
-          <MainChats conversations={convo_data?.conversations || []} />
+          <MainChats messages={[]} new_messages={[]} />
         </DataFetchContainer>
       </View>
 
